@@ -4,7 +4,7 @@ import './App.css';
 import Colecao from './componentes/colecao/Colecao.jsx';
 import Conta from './componentes/conta/Conta.jsx';
 import Home from './componentes/home/Home.jsx';
-import Login from './componentes/login/Login.jsx';
+import Login from './componentes/login/Login2.jsx';
 import EsqueciSenha from './componentes/login/esqueciSenha/EsqueciSenha.jsx';
 import LojaMoeda from './componentes/loja/moedas/LojaMoeda.jsx';
 import LojaSkin from './componentes/loja/skins/LojaSkin.jsx';
