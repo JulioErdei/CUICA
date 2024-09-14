@@ -17,7 +17,7 @@ import Erro from './componentes/modals/erro/erro.jsx';
 import Fila from './componentes/modals/fila/fila.jsx';
 import Loading from './componentes/modals/loading/loading.jsx';
 import Sucesso from './componentes/modals/sucesso/sucesso.jsx';
-import Tutorial from './componentes/modals/tutorial/tutorial.jsx';
+import Tutorial from './componentes/regras/regras.jsx';
 import Vitoria from './componentes/modals/vitoria/vitoria.jsx';
 import Tabuleiro from './componentes/tabuleiro/Tabuleiro.jsx';
 import GlobalProvider from './providers/GlobalProvider.jsx';
