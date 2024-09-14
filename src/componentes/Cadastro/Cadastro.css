@@ -11,11 +11,18 @@
 
 /* Menu superior*/
 header{
-  position: sticky;
-  top: 0; 
+  position: sticky; 
+  top: 0;
+  background-color: #19421c;
+  padding: 10px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3); 
+  height: auto;
 }
 
-.menu {
+.menu-cadastro {
   width: 100%;
   display: flex;  
   align-items: center;
@@ -27,25 +34,25 @@ header{
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
 }
 
-.menu-icon {
+.menu-icon-cadastro {
   display: flex;
   align-items: center;
  
 }
 
-.game-logo {
+.game-logo-cadastro {
   height: 50px;
   padding: 0px 40px;
   width: auto;
 }
 
-.menu-options {
+.menu-options-cadastro {
   display: flex;
   gap: 60px;
   align-items: center;
 }
 
-.menu-options a {
+.menu-options-cadastro a {
   color: #f7d287;
   text-decoration: none;
   font-size: 24px;
@@ -53,18 +60,18 @@ header{
   text-shadow: 2px 2px 2px #000;
 }
 
-.menu-options a:hover {
+.menu-options-cadastro a:hover {
   color: #ffcc33;
 }
 
-.sound-icon {
+.sound-icon-cadastro {
   height: 40px;
   width: auto;
   cursor: pointer;
 }
 
 /*Estilizando o formulário de cadastro*/
-.form-background {
+.form-background-cadastro {
   background-image: url('./images/fundo-forms8.png');
   background-size: contain;
   background-position: center;
@@ -73,10 +80,8 @@ header{
   display: flex;
   justify-content: center;
   align-items: center;
-  min-height: 100vh;
+  min-height: 93vh;
   width: 40%;
-  border-radius: 0 0 30px 30px;
-
 }
 
 form {
@@ -110,6 +115,7 @@ input {
   background-color: #f0d8a6;
   border: 2px solid #57330e;
   border-radius: 5px;
+  box-sizing: border-box; /* Garante que padding e borda não afetem o tamanho */
 }
 
 button {
@@ -140,8 +146,28 @@ button:active {
 
 /* Tornando o layout responsivo */
 @media (max-width: 600px) {
-  .form-background {
+  /* Ajuste para o formulário */
+  .form-background-cadastro {
     width: 90%; 
+    padding: 20px;
     border-radius: 0 0 15px 15px;
+  }
+  
+  /* Ajuste para o menu */
+  .menu-options-cadastro {
+    flex-direction: column; /* Faz com que as opções fiquem empilhadas */
+    gap: 10px; /* Ajusta o espaçamento entre os itens no mobile */
+  }
+  
+  .menu-options-cadastro a {
+    font-size: 18px; /* Diminui o tamanho das fontes no menu em telas menores */
+  }
+  
+  .game-logo-cadastro {
+    height: 40px; /* Ajusta o tamanho do ícone em telas menores */
+  }
+  
+  .sound-icon-cadastro {
+    height: 30px; /* Ajusta o ícone de som no mobile */
   }
 }

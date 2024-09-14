@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useNavigate } from 'react-router';
-import "./cadastro.css"; // criar o estilo depois
+import "./Cadastro.css";
 import gameIcon from './images/icon2.png';
 import soundIcon from './images/soundicon.png';
 
@@ -25,22 +25,22 @@ function Cadastro() {
 
   return (
     <div className="cadastro-container">
-      <header className="menu"> 
-        <div className="menu-icon">
-          <img src={gameIcon} alt="Jogo da Onça" className="game-logo" />
+      <header className="menu-cadastro"> 
+        <div className="menu-icon-cadastro">
+          <img src={gameIcon} alt="Jogo da Onça" className="game-logo-cadastro" />
         </div>
-        <nav className="menu-options">
+        <nav className="menu-options-cadastro">
           <a href="#creditos">Créditos</a>
           <a href="#regras">Regras</a>
           <a href="#jogar">Jogar</a>
           <a href="#cadastrar">Cadastrar</a>
           <a href="#shop">Shop</a>
           <a href="#som">
-            <img src={soundIcon} alt="Som do Jogo" className="sound-icon" />
+            <img src={soundIcon} alt="Som do Jogo" className="sound-icon-cadastro" />
           </a>
         </nav>
       </header>
-        <div className="form-background">
+        <div className="form-background-cadastro">
             <form onSubmit={handleSubmit}>
               <div className="cadastro-title">Cadastro</div>
               <label>Nome Completo</label>

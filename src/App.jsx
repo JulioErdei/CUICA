@@ -21,7 +21,7 @@ import Tutorial from './componentes/modals/tutorial/tutorial.jsx';
 import Vitoria from './componentes/modals/vitoria/vitoria.jsx';
 import Tabuleiro from './componentes/tabuleiro/Tabuleiro.jsx';
 import GlobalProvider from './providers/GlobalProvider.jsx';
-import Cadastro from './componentes/Cadastro/Cadastro.jsx';
+import Cadastro from './componentes/cadastro/Cadastro.jsx';
 import useAuthConta from '/src/hooks/AuthConta';
 
 
