@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import "./Login.css"; 
+import "./Login2.css"; 
 import gameIcon from './img/icon2.png';
 import soundIcon from './img/soundicon.png';
 
