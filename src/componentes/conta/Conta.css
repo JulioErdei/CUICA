@@ -12,7 +12,7 @@
 .bg-conta {
     width: 100vw;
     height: 100vh;
-    background-image: url('/public/assets/imagens/backgrounds/cenario_conta-colecao.png');
+    background-image: url('/public/assets/imagens/backgrounds/fundo.png');
     background-repeat: no-repeat;
     background-size: cover;
 }

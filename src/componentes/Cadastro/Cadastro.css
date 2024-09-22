@@ -1,3 +1,14 @@
+@import url('https://fonts.googleapis.com/css2?family=Londrina+Solid&family=Vollkorn:wght@400;600;700&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Londrina Solid', cursive;
+  overflow: hidden;
+  scroll-behavior: smooth;
+}
+
 .cadastro-container {
   background: url('images/fundo.png') no-repeat center center;
   background-size: cover;
@@ -16,7 +27,7 @@ header{
   background-color: #19421c;
   padding: 10px 20px;
   display: flex;
-  justify-content: space-between;
+  justify-content: space-between; 
   align-items: center;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3); 
   height: auto;
@@ -24,10 +35,9 @@ header{
 
 .menu-cadastro {
   width: 100%;
-  display: flex;  
+  display: flex; 
   align-items: center;
   background-color: #19421c;
-  font-family: 'Chromium One Std Regular', sans-serif;
   text-shadow: 5px 5px 2px #000;
   padding: 10px 20px;
   justify-content: center;
@@ -37,7 +47,6 @@ header{
 .menu-icon-cadastro {
   display: flex;
   align-items: center;
- 
 }
 
 .game-logo-cadastro {
@@ -76,7 +85,7 @@ header{
   background-size: contain;
   background-position: center;
   background-repeat: no-repeat;
-  padding: 40px 0; 
+  padding: 40px 0;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -89,8 +98,8 @@ form {
   flex-direction: column;
   align-items: center;
   width: 65%;
-  gap: 1px;
-  font-family: 'Chromium One Std Regular', sans-serif;
+  height: auto;
+  gap: 2px;
 }
 
 .cadastro-title {
@@ -121,7 +130,7 @@ input {
 button {
   background-image: url('images/placa5.png');
   background-position: center;
-  padding: 15px 20px;
+  padding: 12px 15px;
   border: none;
   border-radius: 10px;
   cursor: pointer;
@@ -148,26 +157,22 @@ button:active {
 @media (max-width: 600px) {
   /* Ajuste para o formulário */
   .form-background-cadastro {
-    width: 90%; 
-    padding: 20px;
-    border-radius: 0 0 15px 15px;
+      width: 90%;
+      padding: 20px;
+      border-radius: 0 0 15px 15px;
   }
-  
   /* Ajuste para o menu */
   .menu-options-cadastro {
-    flex-direction: column; /* Faz com que as opções fiquem empilhadas */
-    gap: 10px; /* Ajusta o espaçamento entre os itens no mobile */
+      flex-direction: column; /* Faz com que as opções fiquem empilhadas */
+      gap: 10px; /* Ajusta o espaçamento entre os itens no mobile */
   }
-  
   .menu-options-cadastro a {
-    font-size: 18px; /* Diminui o tamanho das fontes no menu em telas menores */
+      font-size: 18px; /* Diminui o tamanho das fontes no menu em telas menores */
   }
-  
   .game-logo-cadastro {
-    height: 40px; /* Ajusta o tamanho do ícone em telas menores */
+      height: 40px; /* Ajusta o tamanho do ícone em telas menores */
   }
-  
   .sound-icon-cadastro {
-    height: 30px; /* Ajusta o ícone de som no mobile */
+      height: 30px; /* Ajusta o ícone de som no mobile */
   }
 }
