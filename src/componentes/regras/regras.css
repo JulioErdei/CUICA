@@ -1,229 +1,163 @@
-/* Estilização geral da aplicação */
-.App {
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Londrina Solid', cursive;
+  overflow: hidden;
+  scroll-behavior: smooth;
+}
+
+.container {
+  background: url('images/fundo.png') no-repeat center center;
+  background-size: cover;
   display: flex;
-  flex-direction: column;
   justify-content: center;
   align-items: center;
   height: 100vh;
-  text-align: center;
-  background-image: url('../Cadastro/images/fundo.png');
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  margin-top: 2rem;
-}
-
-header {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-}
-
-main {
-  width: 100%;
-}
-
-html, body {
+  flex-direction: column;
   overflow: hidden;
 }
 
-/* Estilização do cabeçalho */
-.cabeçalho {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  background: #19421c; /* Cor de fundo verde escuro */
-  color: #fff;
-  padding: 1rem 2rem;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  position: fixed;
+/* Menu superior*/
+header{
+  position: sticky; 
   top: 0;
-  left: 0;
-  right: 0;
-  z-index: 3;
-}
-
-/* Estilização do título da navegação */
-.cabeçalho .logo h1 {
-  margin: 0;
-  font-size: 2rem;
-  font-weight: bold;
-  font-family: 'Georgia', serif;
-}
-
-/* Estilização da navegação */
-.navegacao ul {
-  list-style: none;
-  margin: 0;
-  padding: 0;
+  background-color: #19421c;
+  padding: 10px 20px;
   display: flex;
-  gap: 4rem;
+  justify-content: space-between; 
+  align-items: center;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3); 
+  height: auto;
 }
 
-.navegacao a {
-  color: #fff;
+.menu {
+  width: 100%;
+  display: flex; 
+  align-items: center;
+  background-color: #19421c;
+  text-shadow: 5px 5px 2px #000;
+  padding: 10px 20px;
+  justify-content: center;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+}
+
+.menu-icon {
+  display: flex;
+  align-items: center;
+}
+
+.game-logo {
+  height: 50px;
+  padding: 0px 40px;
+  width: auto;
+}
+
+.menu-options {
+  display: flex;
+  gap: 60px;
+  align-items: center;
+}
+
+.menu-options a {
+  color: #f7d287;
   text-decoration: none;
-  font-size: 1rem;
-  padding: 5px 10px;
-  transition: background 0.3s, color 0.3s;
-  border-radius: 5px;
-}
-
-.navegacao a:hover {
-  background: #3cb371;
-  color: #fff;
-}
-
-/* Menu Hambúrguer */
-.menu-hamburguer {
-  display: none;
-  background: none;
-  border: none;
-  color: white;
-  font-size: 30px;
-  cursor: pointer;
-}
-
-/* Estilização do controle de som */
-.controle-som {
-  display: flex;
-  align-items: center;
-}
-
-.controle-som {
-  display: flex;
-  align-items: center;
-}
-
-.botao-som {
-  background: none;
-  border: none;
-  cursor: pointer;
   font-size: 24px;
-  color: white;
+  font-weight: bold;
+  text-shadow: 2px 2px 2px #000;
 }
 
-.botao-som:focus {
-  outline: none;
+.menu-options a:hover {
+  color: #ffcc33;
 }
 
-/* Estilização da placa de regras */
-.placa-madeira {
-  padding: 1.5rem;
-  background-color: #deb887;
-  border: 2px solid #d5b790;
-  box-shadow: inset 2px 2px 5px rgba(0, 0, 0, 0.3),
-              2px 2px 5px rgba(0, 0, 0, 0.3);
+.sound-icon {
+  height: 40px;
+  width: auto;
+  cursor: pointer;
+}
+
+/*Estilizando o formulário de cadastro*/
+.quadro {
+  background-image: url('./images/fundo-forms8.png');
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  padding: 40px 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 93vh;
+  width: 40%;
+}
+
+.quadro-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 65%;
+  height: auto;
+  gap: 2px;
+}
+
+.title {
+  font-size: 52px;
+  color: #57330e;
+  font-weight: bold;
+  text-shadow: 5px 5px 2px #000;
+  margin-bottom: 20px;
+  width: 100%;
   text-align: center;
-  z-index: 2;
 }
-
-/* Estilização do título da placa de regras*/
-.titulo {
-  margin: 0;
-  font-size: 2rem;
-  color: #615342;
-  font-family: 'Georgia', serif;
-}
-
-/* Estilização da borda do texto */
-.borda-madeira {
-  padding: 1.5rem;
-  border: 20px solid #deb887;
-  box-shadow: inset 2px 2px 5px rgba(0, 0, 0, 0.3),
-              2px 2px 5px rgba(0, 0, 0, 0.3);
-  position: relative;
-  background-color: #deb887;
-  width: 50%;
-  max-width: 50vw;
-  margin-top: -1.2rem;
-  z-index: 1;
-}
-
-.conteudo-madeira {
-  background-color: #c2955c;
-  padding: 1.5rem;
-  box-shadow: inset 1px 1px 3px rgba(0, 0, 0, 0.2); }
-
-/* .titulo {
-  font-size: 1.7rem;
-  color: #72614a;
-  font-family: 'Georgia', serif;
-  text-align: center;
-} */
 
 .texto {
-  margin: 20px 0 0;
-  color: #615342;
-  font-size: 1rem;
-  line-height: 1.6;
+  font-size: 20px;
 }
 
-/* Estilização do botão */
-.botao-madeira {
-  padding: 1rem 2rem;
-  font-size: 1rem;
-  font-family: 'Arial', sans-serif;
-  text-align: center;
-  color: #615342;
-  text-decoration: none;
-  border: 2px solid #deb887;
-  background-color: #deb887;
-  box-shadow: inset 2px 2px 5px rgba(0, 0, 0, 0.3),
-              2px 2px 5px rgba(0, 0, 0, 0.3);
-  transition: all 0.3s ease;
-  margin-top: 1.5rem;
+button {
+  background-image: url('images/placa5.png');
+  background-position: center;
+  padding: 12px 15px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  height: 25%;
+  width: 85%;
+  font-size: 24px;
+  color: #f0d8a6;
+  font-weight: bold;
+  text-shadow: 3px 3px 3px #000;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+  cursor: pointer;
+  transition: transform 0.1s ease;
 }
 
-.botao-madeira:hover {
-  background-color: #615342;
-  color: #d5b790;
+button:hover {
+  transform: scale(1.05);
 }
 
-.botao-madeira:active {
-  box-shadow: inset 2px 2px 10px rgba(0, 0, 0, 0.4),
-              2px 2px 10px rgba(0, 0, 0, 0.4);
-  background-color: #8e7758;
+button:active {
+  transform: scale(0.95);
 }
 
-/* Remover scroll em telas maiores */
-@media (max-width: 1024px) {
-  html, body {
-    overflow: visible;
+@media (max-width: 600px) {
+  .quadro {
+      width: 90%;
+      padding: 20px;
+      border-radius: 0 0 15px 15px;
   }
-}
-
-/* Media Queries para telas pequenas */
-@media (max-width: 768px) {
-  /* Esconder a barra de navegação por padrão */
-  .navegacao {
-    display: none;
+  
+  .menu-options {
+      flex-direction: column;
+      gap: 10px;
   }
-
-  /* Mostrar o menu hambúrguer */
-  .menu-hamburguer {
-    display: block;
+  .menu-options a {
+      font-size: 18px;
   }
-
-  /* Mostrar a navegação quando o menu for aberto */
-  .navegacao.aberto {
-    display: block;
-    position: absolute;
-    top: 60px;
-    left: 0;
-    right: 0;
-    background: #2e8b57;
-    padding: 20px;
+  .game-logo {
+      height: 40px;
   }
-
-  .navegacao ul {
-    display: block;
-    text-align: center;
-  }
-
-  .navegacao li {
-    margin-bottom: 15px;
+  .sound-icon {
+      height: 30px;
   }
 }

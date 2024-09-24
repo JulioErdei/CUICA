@@ -23,6 +23,7 @@ import Tabuleiro from './componentes/tabuleiro/Tabuleiro.jsx';
 import GlobalProvider from './providers/GlobalProvider.jsx';
 import Cadastro from './componentes/cadastro/Cadastro.jsx';
 import useAuthConta from '/src/hooks/AuthConta';
+import Credito from './componentes/credito/credito.jsx';
 
 
 const App = () => {
@@ -53,6 +54,7 @@ const App = () => {
               <Route path='/desistir' element={<Desistir />} />
               <Route path='/compras/moedas/:id' element={<CompraMoedas />} />
               <Route path='/compras/skins/:id' element={<CompraSkins />} />
+              <Route path='/credito' element={<Credito />} />
           </Routes>
         </GlobalProvider>
       </BrowserRouter>
