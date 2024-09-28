@@ -3,11 +3,12 @@ import { useNavigate } from 'react-router';
 import { toast } from 'react-toastify';
 import ContaService from '../../services/ContaService';
 import './Conta.css';
-import ReturnIcon from '/public/assets/imagens/icones/ReturnIcon';
 import VisibilityIcon from '/public/assets/imagens/icones/VisibilityIcon';
 import VisibilityOffIcon from '/public/assets/imagens/icones/VisibilityOffIcon';
 import useAuthConta from '/src/hooks/AuthConta';
 import { validatePassword } from '/src/utils/Regex.jsx';
+import gameIcon from '/public/assets/imagens/icones/icon2.png';
+import soundIcon from '/public/assets/imagens/icones/soundicon.png';
 
 function Conta() {
     const navigate = useNavigate();
@@ -54,17 +55,29 @@ function Conta() {
     return (
         <section className="bg-conta">
             <div className="bg-conta-container">
-                <div className="menu-superior-conta">
-                    <div className="menu-conta">
-                        <button className="item-retorno-conta" onClick={() => navigate("/menu")}>
-                            <ReturnIcon />
-                        </button>
+                
+            <div className="menu-superior-conta">
+                <header>
+                    <div className="menu-icon-cadastro">
+                    <img src={gameIcon} alt="Jogo da Onça" className="game-logo-cadastro" />
                     </div>
-                    <div className="titulo-conta">
+                    <nav className="menu-options-cadastro">
+                        <a href="#creditos">Créditos</a>
+                        <a href="#regras">Regras</a>
+                        <a href="#jogar">Jogar</a>
+                        <a href="#cadastrar">Cadastrar</a>
+                        <a href="#shop">Shop</a>
+                        <a href="#som">
+                            <img src={soundIcon} alt="Som do Jogo" className="sound-icon-cadastro" />
+                        </a>
+                    </nav>
+                </header>
+                   
+                    {/*<div className="titulo-conta">
                         <div className="placa-titulo-conta">
-                            <h1>SUA CONTA</h1>
+                            <h1>PERFIL</h1>
                         </div>
-                    </div>
+                    </div>*/}
                 </div>
                 <div className="content-main-conta">
                     <div className="content-main-superior-conta">
@@ -81,7 +94,7 @@ function Conta() {
                                 <label htmlFor="">E-MAIL:</label>
                                 <input type="email" value={email} pattern="^\w.{2,}\u0040[a-z]{2,}.[a-z]{2,}\S"
                                 title="Formato esperado: seuemail@email.com"
-                                style={{ backgroundColor: '#fff'}}
+                                
                                 disabled/>
                             </div>
                             <div className="info-conta info-senha-conta">
@@ -94,39 +107,8 @@ function Conta() {
                                 <button className="btn-atualiza">ATUALIZAR</button>
                             </div>
                         </form>
-                        <div className="emblemas-conta">
-                            {user?.emblemas && user.emblemas.map(emblema => (
-                                <div className="emblema-item-conta" key={emblema.id}>
-                                    <div className={emblema.conquistado ? "icon-emblema-conquistado" : "icon-emblema-nao-conquistado"}></div>
-                                    <span className="tooltip-text-conta" id="top">{emblema.nome}<br />{emblema.descricao}</span>
-                                </div>
-                            ))}
-                        </div>
                     </div>
-                    <div className="historico-user-conta">
-                        <div className="historico-vitoria-conta">
-                            <div className="placa-conta">
-                                <div className="placa-itens-conta">
-                                    <div className="icon-vit-conta"></div>
-                                    <div className="info-item-conta">
-                                        <h1 className="num-vit-conta">{user?.jogador?.qntvitorias}</h1>
-                                        <h1>VITÓRIAS</h1>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div className="historico-derrota-conta">
-                            <div className="placa-conta">
-                                <div className="placa-itens-conta">
-                                    <div className="icon-der-conta"></div>
-                                    <div className="info-item-conta">
-                                        <h1 className="num-der-conta">{(user?.jogador?.qntpartidasjogadas)-(user?.jogador?.qntvitorias)}</h1>
-                                        <h1>DERROTAS</h1>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                    
                 </div>
             </div>
         </section>

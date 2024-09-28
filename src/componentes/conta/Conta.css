@@ -1,14 +1,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Londrina+Solid&family=Vollkorn:wght@400;600;700&display=swap');
 
-* {
+/** {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     font-family: 'Londrina Solid', cursive;
     overflow: hidden;
     scroll-behavior: smooth;
-}
-
+}   
+*/
 .bg-conta {
     width: 100vw;
     height: 100vh;
@@ -17,27 +17,12 @@
     background-size: cover;
 }
 
-.bg-conta-container {
+/*.bg-conta-container {
     width: 90vw;
     height: 95vh;
     z-index: 1;
     margin: 2.5vh auto;
 }
-
-.menu-superior-conta{
-    width: 85vw;
-    height: 8vh;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-}
-
-.menu-conta{
-    width: 5vw;
-    height: 8vh;
-}
-
 .item-retorno-conta{
     width: 80%;
     height: 80%;
@@ -82,6 +67,55 @@
     justify-content: center; 
     align-items: center;
 }
+*/
+/* Menu superior*/
+header{
+    align-items: center;
+    box-shadow: none;
+
+}
+  .menu-superior-conta {
+    flex-direction: row;
+    width: 100%;
+    display: flex; 
+    align-items: center;
+    background-color: #19421c;
+    justify-content: center;
+  }
+  
+  .menu-icon-cadastro {
+    display: flex;
+    align-items: center;
+  }
+  
+  .game-logo-cadastro {
+    height: 50px;
+    padding: 0px 40px;
+    width: auto;
+  }
+  
+  .menu-options-cadastro {
+    display: flex;
+    gap: 60px;
+    align-items: center;
+  }
+  
+  .menu-options-cadastro a {
+    color: #f7d287;
+    text-decoration: none;
+    font-size: 24px;
+    font-weight: bold;
+  }
+  
+  .menu-options-cadastro a:hover {
+    color: #ffcc33;
+  }
+  
+  .sound-icon-cadastro {
+    height: 40px;
+    width: auto;
+    cursor: pointer;
+  }
 
 h1{
     font-family: 'Londrina Solid', cursive;
@@ -273,59 +307,6 @@ h1{
     margin-left: -100px;
 }  
 
-.placa-conta{
-    width: 90%;
-    height: 100%;
-    margin: 10px 5px;
-    background-image: url('/public/assets/imagens/placas/placa_home.png');
-    background-size: contain;
-    background-repeat: no-repeat;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-}
-
-.placa-itens-conta{
-    width: 70%;
-    height: 55%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.icon-vit-conta{
-    width: 30%;
-    height: 90%;
-    margin: 2.5% 0;
-    background-image: url('/public/assets/imagens/vetores/vitorias.png');
-    background-size: contain;
-    background-repeat: no-repeat;
-}
-
-.info-item-conta{
-    width: 50%;
-    height: 80%;
-}
-
-.icon-der-conta{
-    width: 30%;
-    height: 80%;
-    margin-bottom: 5%;
-    background-image: url('/public/assets/imagens/vetores/derrotas.png');
-    background-size: contain;
-    background-repeat: no-repeat;
-}
-
-.historico-vitoria-conta{
-    width: 30vw;
-    height: 30vh;
-}
-
-.historico-derrota-conta{
-    width: 30vw;
-    height: 30vh;
-}
 
 
 @media screen and (max-width: 1366px) and (max-height: 768px) {
