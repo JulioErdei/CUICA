@@ -1,288 +1,115 @@
 @import url('https://fonts.googleapis.com/css2?family=Londrina+Solid&family=Vollkorn:wght@400;600;700&display=swap');
 
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Londrina Solid', cursive;
-    /*font-family: Georgia, serif;*/
-    overflow: hidden;
-    scroll-behavior: smooth;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Londrina Solid', cursive;
+  overflow: hidden;
+  scroll-behavior: smooth;
 }
 
-.bg-home {
-    width: 100vw;
-    height: 100vh;
-    background-image: url('/public/assets/imagens/backgrounds/fundo.png');
-    background-repeat: no-repeat;
-    background-size: cover;
+.cadastro-container {
+  background: url('images/fundo.png') no-repeat center center;
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  flex-direction: column;
+  overflow: hidden;
 }
 
-.bg-home-container {
-    width: 90vw;
-    height: 95vh;
-    z-index: 1;
-    margin: 2.5vh auto;
+/* Menu superior*/
+header{
+  position: sticky; 
+  top: 0;
+  background-color: #19421c;
+  padding: 10px 20px;
+  display: flex;
+  justify-content: space-between; 
+  align-items: center;
+  height: auto;
 }
 
-.menu-superior {
-    width: 90vw;
-    height: 10vh;
-    display: flex;
-    margin-bottom: 30px;
+.menu-cadastro {
+  width: 100%;
+  display: flex; 
+  align-items: center;
+  background-color: #19421c;
+  text-shadow: 5px 5px 2px #000;
+  padding: 10px 20px;
+  justify-content: center;
 }
 
-.menu-infos-user {
-    width: 40%;
-    height: 100%;
-    display: flex;
-    overflow-y: hidden;
+.menu-icon-cadastro {
+  display: flex;
+  align-items: center;
 }
 
-.item-menu {
-    width: 30%;
-    height: 70%;
-    margin: 10px;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-    background-image: url('/public/assets/imagens/placas/placa_subtitulo.png');
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-color: transparent;
-    border: none;
-}/* Aqui é a parte que fica os icones de moeda, esmeralda etc... */
-
-/*.icon {
-    background-size: contain;
-    background-repeat: no-repeat;
-}*/ /* Ajuste do tamanho do icone de moeda etc... */
-
-/*.icon-nivel {
-    width: 22%;
-    height: 55%;
-    background-position: center;
-    background-image: url('/public/assets/imagens/vetores/nivel.png');
-}*/ /* Icone de nivel (Azulzinho!) */
-
-/*.icon-esmeralda {
-    width: 22%;
-    height: 55%;
-    background-image: url('/public/assets/imagens/vetores/esmeraldas.png');
-}*/ /* Icone de ESMERALDA */
-
-/*.icon-moeda {
-    width: 22%;
-    height: 55%;
-    background-image: url('/public/assets/imagens/vetores/moedas.png');
-}*/ /* ICONE MOEDA */
-
-/*.info-nivel{
-    display: flex;
-}*/ /* MUDOU NADA */
-
-/*.numNivel {
-    text-align: center;
-    margin-top: 5px;
-    font-size: 1.5em;
-    font-family: 'Londrina Solid', cursive;
-    color: #fff;
-}*/ /* MUDOU NADA */
-
-/* Define o numerozinho de cima *//* .info {
-    width: auto;
-    height: 60%;
-    display: flex;
-    text-align: left;
-    align-items: center;
-    justify-content: center;
-    border: none;
-    background-color: transparent;
-}*/
-
-/* Define o numerozinho de cima *//* .info-p {
-    font-family: 'Londrina Solid', cursive;
-    font-size: 2em;
-    color: #5E2C12;
-}*/
-
-/* DEFINE TAMANHO DOS ICONES DO MENU DE CIMA (NO CASO O NOSSO SERA SOMENTE SOM */.menu-itens-config {
-    width: 25%;
-    height: 100%;
-    display: flex;
-    justify-content: end;
-    overflow-y: hidden;
-    margin-left: auto;
+.game-logo-cadastro {
+  height: 50px;
+  padding: 0px 40px;
+  width: auto;
 }
 
-/* Coloca a plaquina nos icones */.item-config {
-    width: 25%;
-    height: 100%;
-    margin: 10px;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-    background-image: url('/public/assets/imagens/placas/IMAGEMICONE.png');
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-color: transparent;
-    border: none;
+.menu-options-cadastro {
+  display: flex;
+  gap: 60px;
+  align-items: center;
 }
 
-/* ajusta o formato das plaquinhas */.item-icon {
-    background-size: contain;
-    background-repeat: no-repeat;
+.menu-options-cadastro a {
+  color: #f7d287;
+  text-decoration: none;
+  font-size: 24px;
+  font-weight: bold;
+  text-shadow: 2px 2px 2px #000;
 }
 
-.icon-som {
-    width: 60%;
-    height: 60%;
-    background-image: url('/public/assets/imagens/icones/volume-on.svg');
+.menu-options-cadastro a:hover {
+  color: #ffcc33;
 }
 
-/*.icon-conta {
-    width: 60%;
-    height: 60%;
-    background-image: url('/public/assets/imagens/icones/usuario.svg');
-}*/
-
-/*.icon-logout {
-    width: 60%;
-    height: 60%;
-    background-image: url('/public/assets/imagens/icones/logout.svg');
-}*/
-
-/* Define tamnaho do menu */.main {
-    width: 90vw;
-    height: 75vh;
-    margin: 5vh auto;
+.item-config {
+  height: 40px;
+  width: auto;
+  cursor: pointer;
 }
 
-/*.arenas-carrossel-container{
-    width: 40vw;
-    height: 35vh;
-    margin: 0 auto;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}*/
-
-/*.seta {
-    width: 5vw;
-    height: 35vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.logo-home {
+  background-image: url('./images/Logo.jpg');
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  padding: 40px 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 93vh;
+  width: 40%;
 }
 
-.seta img {
-    width: 80%;
-    height: 20%;
-}
-
-.seta img:hover {
-    cursor: pointer;
-}*/
-
-/*.carrossel {
-    overflow: hidden;
-    width: 30vw; 
-}*/
-
-/*.mapa {
-    width: 30vw; 
-    height: 35vh;
-}*/
-
-/*.mapa > img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}*/
-
-.TITULO{
-height: 6vw;
-font-family: OCR A Std, monospace;
-background-image: url('/public/assets/imagens/placas/Imagem12.png');
-background-size: 50%;
-background-repeat: no-repeat;
-background-position: center;
-margin: 0 auto;
-text-align: center;
-font-size: 2em;
-}
-
-/* DEFINE OS COISO DE MENU PRA CLICAR E JOGAR */.menu-principal {
-    width: 50vw;
-    height: 100%;
-    padding-left: auto;
-    padding-right: auto;
-    margin: 0 auto;
-/*    background-image: url('/public/assets/imagens/placas/fundo_modal.png');
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: center;*/
-/*    overflow-y: hidden;*/
-/*    display: table;*/
-/*    flex-wrap: wrap;*/
-/*    align-items: center;
-    justify-content: center;*/
-}
-
-/* DEFINE OS COISO DE MENU PRA CLICAR E JOGAR */ .menu-item {
-    width: 100% !important;
-    height: 15% !important;
-    /*margin: 10px 5px !important;*/
-    padding-top: center;
-    background-image: url('/public/assets/imagens/placas/PLACAHOMETESTE2.png');
-    background-size: 40%;
-    background-repeat: no-repeat;
-    background-position: center;
-    display: grid;
-    align-items: center;
-    justify-content: center;
-    background-color: transparent !important;
-    border-radius: 1px !important;
-    
-}
-
-/* DEFINE OS COISO DE MENU PRA CLICAR E JOGAR */.texto-p {
-    width: 100%;
-    text-align: center;
-    font-family: 'Londrina Solid', cursive;
-    font-size: 2em;
-    font-weight: 500;
-    color: #5E2C12;
-}
-
-/* Centralizar caso tenha mais de uma linha no bo *//*.menu-item:nth-child(1) .texto-p{
-    width: 75%;
-    height: 50%;
-}
-
-.menu-item:nth-child(2) .texto-p{
-    width: 75%;
-    height: 50%;
-}*/
-
-@media screen and (max-width: 1366px) and (max-height: 768px) {
-    .icon-nivel {
-        width: 22%;
-    }
-    
-    .numNivel {
-        margin-left: 10px;
-        margin-top: 3px;
-        font-size: 1.2em;
-    }
-    
-    .info-p {
-        font-size: 1.3em;
-    }
-    
-    .texto-p {
-        font-size: 1.3em;
-    }
+/* Tornando o layout responsivo */
+@media (max-width: 600px) {
+  /* Ajuste para o formulário */
+  .logo-home {
+      width: 90%;
+      padding: 20px;
+      border-radius: 0 0 15px 15px;
+  }
+  /* Ajuste para o menu */
+  .menu-options-cadastro {
+      flex-direction: column; /* Faz com que as opções fiquem empilhadas */
+      gap: 10px; /* Ajusta o espaçamento entre os itens no mobile */
+  }
+  .menu-options-cadastro a {
+      font-size: 18px; /* Diminui o tamanho das fontes no menu em telas menores */
+  }
+  .game-logo-cadastro {
+      height: 40px; /* Ajusta o tamanho do ícone em telas menores */
+  }
+  .sound-icon-cadastro {
+      height: 30px; /* Ajusta o ícone de som no mobile */
+  }
 }
