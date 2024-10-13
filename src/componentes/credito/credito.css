@@ -110,13 +110,38 @@ header{
   text-align: center;
 }
 
-h2 {
+.subtitle {
     font-size: 24px;
+    text-align: center;
 }
 
-p {
-    font-size: 20px;
+.texto {
+  width: 100%;
+  margin-top: 1rem;
 }
+
+.list-title {
+  text-align: start;
+    font-size: 22px;
+    margin-top: 1rem;
+}
+
+.list-text {
+  margin-left: 2rem;
+  font-size: 20px;
+}
+
+/* .texto dt {
+    text-align: start;
+    font-size: 22px;
+    margin-top: 1rem;
+    list-style-type: disc;
+}
+
+.texto dt dd {
+  margin-left: 2rem;
+  font-size: 20px;
+} */
 
 button {
   background-image: url('images/placa5.png');
