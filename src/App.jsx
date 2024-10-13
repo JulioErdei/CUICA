@@ -4,6 +4,7 @@ import './App.css';
 import Colecao from './componentes/colecao/Colecao.jsx';
 import Conta from './componentes/conta/Conta.jsx';
 import Home from './componentes/home/Home.jsx';
+import HomeLog from './componentes/homeLog/HomeLog.jsx';
 import Login from './componentes/login/Login2.jsx';
 import EsqueciSenha from './componentes/login/esqueciSenha/EsqueciSenha.jsx';
 import LojaMoeda from './componentes/loja/moedas/LojaMoeda.jsx';
@@ -35,6 +36,7 @@ const App = () => {
           <Routes>
               <Route path='/' element={signed ? <Navigate to={"/menu"}/> : <Navigate to={"/menu"}/>}/>
               <Route path='/menu' element={<Home />} />
+              <Route path='/menuLogado' element={<HomeLog />} />
               <Route path='/login' element={<Login />} />
               <Route path='/cadastro' element={<Cadastro />} />
               <Route path='/login/esqueci-senha' element={<EsqueciSenha/>} />
