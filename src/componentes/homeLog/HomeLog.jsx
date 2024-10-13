@@ -26,8 +26,12 @@ function Home() {
           </a>
           </nav>
       </header>
-      <div className="logo-homeLog">
-        
+      <div className="Formhome">
+        <div className="logo-homeLog">
+          <div className="buton-jogar">
+            <button type="submit">JOGAR</button>
+          </div>
+        </div>
       </div>
     </div>
   );

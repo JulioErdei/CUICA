@@ -77,9 +77,18 @@ header{
   cursor: pointer;
 }
 
+.Formhome {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 90%;
+  height: auto;
+  gap: 2px;
+}
+
 .logo-homeLog {
   background-image: url('./images/Logo.jpg');
-  background-size: contain;
+  background-size: 100%;
   background-position: center;
   background-repeat: no-repeat;
   padding: 40px 0;
@@ -87,7 +96,42 @@ header{
   justify-content: center;
   align-items: center;
   min-height: 93vh;
-  width: 40%;
+  width: 30%;
+}
+
+.buton-jogar {
+  margin-top: 500px;
+  padding: 40px 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 93vh;
+  width: 30%;
+}
+
+button {
+  background-image: url('images/placa5.png');
+  background-position: center;
+  padding: 12px 15px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  height: 25%;
+  width: 85%;
+  font-size: 24px;
+  color: #f0d8a6;
+  font-weight: bold;
+  text-shadow: 3px 3px 3px #000;
+  cursor: pointer;
+  transition: transform 0.1s ease;
+}
+
+button:hover {
+  transform: scale(1.05);
+}
+
+button:active {
+  transform: scale(0.95);
 }
 
 /* Tornando o layout responsivo */
