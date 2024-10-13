@@ -25,6 +25,7 @@ import GlobalProvider from './providers/GlobalProvider.jsx';
 import Cadastro from './componentes/cadastro/Cadastro.jsx';
 import useAuthConta from '/src/hooks/AuthConta';
 import Credito from './componentes/credito/credito.jsx';
+import Logout from './componentes/logout/Logout.jsx';
 
 
 const App = () => {
@@ -36,6 +37,7 @@ const App = () => {
           <Routes>
               <Route path='/' element={signed ? <Navigate to={"/menu"}/> : <Navigate to={"/menu"}/>}/>
               <Route path='/menu' element={<Home />} />
+              <Route path='/Logout' element={<Logout />} />
               <Route path='/menuLogado' element={<HomeLog />} />
               <Route path='/login' element={<Login />} />
               <Route path='/cadastro' element={<Cadastro />} />
