@@ -20,10 +20,9 @@
   overflow: hidden;
 }
 
-/* Menu superior*/
+/*PADRÃO Menu superior*/
 header{
   position: sticky; 
-  top: 0;
   background-color: #19421c;
   padding: 10px 20px;
   display: flex;
@@ -32,7 +31,7 @@ header{
   height: auto;
 }
 
-.menu-cadastro {
+.menu-cadastro{
   width: 100%;
   display: flex; 
   align-items: center;
@@ -61,14 +60,16 @@ header{
 
 .menu-options-cadastro a {
   color: #f7d287;
+  padding: 4px;
   text-decoration: none;
   font-size: 24px;
   font-weight: bold;
-  text-shadow: 2px 2px 2px #000;
+  text-shadow: 3px 3px 3px #000;
 }
 
 .menu-options-cadastro a:hover {
   color: #ffcc33;
+  cursor: pointer;
 }
 
 .sound-icon-cadastro {
@@ -79,46 +80,43 @@ header{
 
 /*Estilizando o formulário de cadastro*/
 .form-background-cadastro {
+  height: 95%;
+  width: 40%;
   background-image: url('./images/fundo-forms8.png');
   background-size: contain;
   background-position: center;
   background-repeat: no-repeat;
-  padding: 40px 0;
   display: flex;
   justify-content: center;
   align-items: center;
-  min-height: 93vh;
-  width: 40%;
 }
-
-form {
+.div-form{
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 65%;
-  height: auto;
-  gap: 2px;
+  height: 65%;
+  width: 80%;
 }
 
 .cadastro-title {
   font-size: 52px;
   color: #57330e;
+  padding: 12px;
   font-weight: bold;
   text-shadow: 5px 5px 2px #000;
-  margin-bottom: 20px;
 }
 
 label {
   font-size: 20px;
+  padding-right: 4px;
   font-weight: bold;
   color: #f7d287;
   text-shadow: 3px 3px 3px #000;
 }
 
 input {
-  margin-bottom: 10px;
-  padding: 10px;
-  width: 70%;
+  width: 65%;
+  height: 6%;
   background-color: #f0d8a6;
   border: 2px solid #57330e;
   border-radius: 5px;
@@ -127,19 +125,15 @@ input {
 
 button {
   background-image: url('images/placa5.png');
-  background-position: center;
-  padding: 12px 15px;
-  border: none;
   border-radius: 10px;
   cursor: pointer;
-  height: 25%;
-  width: 85%;
   font-size: 24px;
   color: #f0d8a6;
   font-weight: bold;
   text-shadow: 3px 3px 3px #000;
   cursor: pointer;
   transition: transform 0.1s ease;
+  height: 10%;
 }
 
 button:hover {
@@ -148,28 +142,4 @@ button:hover {
 
 button:active {
   transform: scale(0.95);
-}
-
-/* Tornando o layout responsivo */
-@media (max-width: 600px) {
-  /* Ajuste para o formulário */
-  .form-background-cadastro {
-      width: 90%;
-      padding: 20px;
-      border-radius: 0 0 15px 15px;
-  }
-  /* Ajuste para o menu */
-  .menu-options-cadastro {
-      flex-direction: column; /* Faz com que as opções fiquem empilhadas */
-      gap: 10px; /* Ajusta o espaçamento entre os itens no mobile */
-  }
-  .menu-options-cadastro a {
-      font-size: 18px; /* Diminui o tamanho das fontes no menu em telas menores */
-  }
-  .game-logo-cadastro {
-      height: 40px; /* Ajusta o tamanho do ícone em telas menores */
-  }
-  .sound-icon-cadastro {
-      height: 30px; /* Ajusta o ícone de som no mobile */
-  }
 }
