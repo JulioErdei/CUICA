@@ -82,12 +82,12 @@ header{
   flex-direction: column;
   align-items: center;
   width: 90%;
-  height: auto;
+  height: 97%;
   gap: 2px;
 }
 
 .logo-homeLog {
-  background-image: url('./images/Logo.jpg');
+  background-image: url('/public/assets/imagens/backgrounds/LogoOnca.png');
   background-size: 100%;
   background-position: center;
   background-repeat: no-repeat;
@@ -96,7 +96,7 @@ header{
   justify-content: center;
   align-items: center;
   min-height: 93vh;
-  width: 30%;
+  width: 20%;
 }
 
 .buton-jogar {
@@ -106,7 +106,7 @@ header{
   justify-content: center;
   align-items: center;
   min-height: 93vh;
-  width: 30%;
+  width: 50%;
 }
 
 button {

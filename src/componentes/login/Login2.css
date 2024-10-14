@@ -1,3 +1,12 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Londrina Solid', cursive;
+  overflow: hidden;
+  scroll-behavior: smooth;
+}
+
 .Login-container {
   background: url('./img/fundo.png') no-repeat center center;
   background-size: cover;
@@ -11,8 +20,14 @@
 
 /* Estilizando o menu */
 header{
-  position: sticky;
-  top: 0;  
+  position: sticky; 
+  top: 0;
+  background-color: #19421c;
+  padding: 10px 20px;
+  display: flex;
+  justify-content: space-between; 
+  align-items: center;
+  height: auto;
 }
 
 .menu {
@@ -75,15 +90,16 @@ header{
   min-height: 100vh;
   width: 40%;
   border-radius: 0 0 30px 30px;
-
+  height: 97%;
 }
 
 form {
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 65%;
-  gap: 1px;
+  width: 90%;
+  height: 97%;
+  gap: 2px;
   font-family: 'Chromium One Std Regular', sans-serif;
 }
 
@@ -93,6 +109,7 @@ form {
   font-weight: bold;
   text-shadow: 5px 5px 2px #000;
   margin-bottom: 20px;
+  margin-top: 80px;
 }
 
 label {
