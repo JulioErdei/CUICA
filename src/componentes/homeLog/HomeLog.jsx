@@ -20,7 +20,7 @@ function Home() {
           <a onClick={() => {navigate("/tutorial")}}>Regras</a>
           <a onClick={() => {navigate("/credito")}}>Créditos</a>
           <a onClick={() => {navigate("/loja/skin")}}>Loja</a>
-          <a onClick={() => {navigate("/loja/skin")}}>Log Out</a>
+          <a onClick={() => {navigate("/Logout")}}>Log Out</a>
           <a href="#som">
             <img src={soundIcon} alt="Som do Jogo" className="sound-icon-cadastro" />
           </a>

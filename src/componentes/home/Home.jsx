@@ -27,8 +27,9 @@ function Home() {
           </a>
           </nav>
       </header>
-      <div className="logo-home">
-        
+      <div className="Formhome1">
+        <div className="logo-home">
+        </div>
       </div>
     </div>
   );

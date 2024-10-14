@@ -4,6 +4,9 @@ import "./Logout.css";
 
 
 function Logout() {
+
+  const navigate = useNavigate();
+
   const [formData, setFormData] = useState({
 
   });
