@@ -21,19 +21,19 @@
 }
 
 /*PADRÃO Menu superior*/
-header{
-  position: sticky; 
+header {
+  position: sticky;
   background-color: #19421c;
   padding: 10px 20px;
   display: flex;
-  justify-content: space-between; 
+  justify-content: space-between;
   align-items: center;
   height: auto;
 }
 
-.menu-cadastro{
+.menu-cadastro {
   width: 100%;
-  display: flex; 
+  display: flex;
   align-items: center;
   background-color: #19421c;
   text-shadow: 5px 5px 2px #000;
@@ -90,18 +90,18 @@ header{
   justify-content: center;
   align-items: center;
 }
-.div-form{
+
+.div-form {
   display: flex;
   flex-direction: column;
   align-items: center;
-  height: 65%;
-  width: 80%;
+  width: 90%;
 }
 
 .cadastro-title {
   font-size: 52px;
   color: #57330e;
-  padding: 12px;
+  padding: 5px;
   font-weight: bold;
   text-shadow: 5px 5px 2px #000;
 }
@@ -115,17 +115,20 @@ label {
 }
 
 input {
-  width: 65%;
-  height: 6%;
+  width: 75%;
+  height: 40px;
   background-color: #f0d8a6;
   border: 2px solid #57330e;
   border-radius: 5px;
-  box-sizing: border-box; /* Garante que padding e borda não afetem o tamanho */
+  box-sizing: border-box;
 }
 
 button {
   background-image: url('images/placa5.png');
   border-radius: 10px;
+  margin-bottom: 10px;
+  width: 40%;
+  height: 40px;
   cursor: pointer;
   font-size: 24px;
   color: #f0d8a6;
@@ -133,7 +136,6 @@ button {
   text-shadow: 3px 3px 3px #000;
   cursor: pointer;
   transition: transform 0.1s ease;
-  height: 10%;
 }
 
 button:hover {
@@ -142,4 +144,78 @@ button:hover {
 
 button:active {
   transform: scale(0.95);
+}
+
+/* Responsividade */
+
+/* Para telas menores que 1024px (tablets e menores) */
+@media (max-width: 1024px) {
+  .form-background-cadastro {
+    width: 60%; /* Aumenta a largura do formulário para telas maiores */
+  }
+
+  .menu-options-cadastro {
+    gap: 40px; /* Diminui o espaço entre os itens do menu */
+  }
+
+  .cadastro-title {
+    font-size: 42px; /* Diminui o título para se ajustar em telas menores */
+  }
+
+  button {
+    width: 50%; /* Botão mais largo para preencher mais espaço */
+  }
+}
+
+/* Para telas menores que 768px (smartphones) */
+@media (max-width: 768px) {
+  .form-background-cadastro {
+    width: 80%; /* Expande o formulário para preencher mais a tela */
+  }
+
+  .menu-options-cadastro {
+    flex-direction: column;
+    gap: 20px; /* Menu em coluna para facilitar o toque em telas menores */
+  }
+
+  .menu-options-cadastro a {
+    font-size: 20px; /* Texto menor no menu */
+  }
+
+  .cadastro-title {
+    font-size: 36px; /* Reduz o tamanho do título */
+  }
+
+  input {
+    width: 90%; /* Inputs mais largos para maior conforto de uso */
+  }
+
+  button {
+    width: 60%; /* Botões mais largos */
+  }
+}
+
+/* Para telas menores que 480px (celulares pequenos) */
+@media (max-width: 480px) {
+  .form-background-cadastro {
+    width: 90%; /* Quase 100% da tela para otimizar espaço */
+  }
+
+  .cadastro-title {
+    font-size: 28px; /* Título bem menor para caber bem */
+  }
+
+  label {
+    font-size: 16px; /* Labels menores para melhor ajuste */
+  }
+
+  input {
+    width: 100%; /* Inputs ocupando toda a largura */
+    height: 35px; /* Altura um pouco menor para telas pequenas */
+  }
+
+  button {
+    width: 80%; /* Botões largos em telas pequenas */
+    font-size: 20px;
+  }
 }

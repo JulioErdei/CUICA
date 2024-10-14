@@ -18,60 +18,59 @@
   overflow: hidden;
 }
 
-/* Menu superior*/
-header{
-  position: sticky; 
-  top: 0;
+/*PADRÃO Menu superior*/
+header {
+  position: sticky;
   background-color: #19421c;
   padding: 10px 20px;
   display: flex;
-  justify-content: space-between; 
+  justify-content: space-between;
   align-items: center;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3); 
   height: auto;
 }
 
-.menu {
+.menu-cadastro {
   width: 100%;
-  display: flex; 
+  display: flex;
   align-items: center;
   background-color: #19421c;
   text-shadow: 5px 5px 2px #000;
   padding: 10px 20px;
   justify-content: center;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
 }
 
-.menu-icon {
+.menu-icon-cadastro {
   display: flex;
   align-items: center;
 }
 
-.game-logo {
+.game-logo-cadastro {
   height: 50px;
   padding: 0px 40px;
   width: auto;
 }
 
-.menu-options {
+.menu-options-cadastro {
   display: flex;
   gap: 60px;
   align-items: center;
 }
 
-.menu-options a {
+.menu-options-cadastro a {
   color: #f7d287;
+  padding: 4px;
   text-decoration: none;
   font-size: 24px;
   font-weight: bold;
-  text-shadow: 2px 2px 2px #000;
+  text-shadow: 3px 3px 3px #000;
 }
 
-.menu-options a:hover {
+.menu-options-cadastro a:hover {
   color: #ffcc33;
+  cursor: pointer;
 }
 
-.sound-icon {
+.sound-icon-cadastro {
   height: 40px;
   width: auto;
   cursor: pointer;

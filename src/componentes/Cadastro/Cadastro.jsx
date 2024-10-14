@@ -51,8 +51,7 @@ function Cadastro() {
         </div>
         <nav className="menu-options-cadastro">
           <a onClick={() => {navigate("/login")}}>Login</a>
-          <a onClick={() => {navigate("/cadastro")}}>Cadastrar</a>
-          <a onClick={() => {navigate("/regras")}}>Regras</a>
+          <a onClick={() => {navigate("/tutorial")}}>Regras</a>
           <a onClick={() => {navigate("/credito")}}>Créditos</a>
           <a onClick={() => {navigate("/loja/moedas")}}>Loja</a>
           <a onClick={toggleSound}>

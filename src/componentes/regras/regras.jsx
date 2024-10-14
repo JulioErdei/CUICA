@@ -1,22 +1,43 @@
-import './regras.css';
+import React, { useState, useEffect } from "react";
+import { useNavigate } from 'react-router';
+import "./regras.css";
 import gameIcon from './images/icon2.png';
 import soundIcon from './images/soundicon.png';
+import backgroundMusic from './sons/ambiente2.wav';
 
 function Regras() {
+  const navigate = useNavigate();
+
+  const [isPlaying, setIsPlaying] = useState(false);  // Estado para controlar o som
+  const [audio] = useState(new Audio(backgroundMusic));  // Instância do áudio
+
+  // Efeito para controlar o início/parada da música quando o estado mudar
+  useEffect(() => {
+    if (isPlaying) {
+      audio.play();
+    } else {
+      audio.pause();
+    }
+  }, [isPlaying, audio]);
+
+  // Alternar o estado do som (ativar/desativar)
+  const toggleSound = () => {
+    setIsPlaying(!isPlaying);
+  };
+
   return (
   <div className="container">
-      <header className="menu"> 
-        <div className="menu-icon">
-          <img src={gameIcon} alt="Jogo da Onça" className="game-logo" />
+      <header className="menu-cadastro"> 
+        <div className="menu-icon-cadastro">
+          <img src={gameIcon} alt="Jogo da Onça" className="game-logo-cadastro" />
         </div>
-        <nav className="menu-options">
-          <a href="#creditos">Créditos</a>
-          <a href="#regras">Regras</a>
-          <a href="#jogar">Jogar</a>
-          <a href="#cadastrar">Cadastrar</a>
-          <a href="#shop">Shop</a>
-          <a href="#som">
-            <img src={soundIcon} alt="Som do Jogo" className="sound-icon" />
+        <nav className="menu-options-cadastro">
+          <a onClick={() => {navigate("/login")}}>Login</a>
+          <a onClick={() => {navigate("/cadastro")}}>Cadastrar</a>
+          <a onClick={() => {navigate("/credito")}}>Créditos</a>
+          <a onClick={() => {navigate("/loja/moedas")}}>Loja</a>
+          <a onClick={toggleSound}>
+            <img src={soundIcon} alt="Som do Jogo" className="sound-icon-cadastro" />
           </a>
         </nav>
       </header>
