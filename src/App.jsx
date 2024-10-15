@@ -16,7 +16,6 @@ import Desistencia from './componentes/modals/derrota/desistencia/desistencia.js
 import Desistir from './componentes/modals/desistir/desistir.jsx';
 import Erro from './componentes/modals/erro/erro.jsx';
 import Fila from './componentes/modals/fila/fila.jsx';
-import Loading from './componentes/modals/loading/loading.jsx';
 import Sucesso from './componentes/modals/sucesso/sucesso.jsx';
 import Tutorial from './componentes/regras/regras.jsx';
 import Vitoria from './componentes/modals/vitoria/vitoria.jsx';
@@ -26,6 +25,7 @@ import Cadastro from './componentes/cadastro/Cadastro.jsx';
 import useAuthConta from '/src/hooks/AuthConta';
 import Credito from './componentes/credito/credito.jsx';
 import Logout from './componentes/logout/Logout.jsx';
+import Loading from './componentes/Loading/Loading.jsx';
 
 
 const App = () => {
@@ -37,6 +37,7 @@ const App = () => {
           <Routes>
               <Route path='/' element={signed ? <Navigate to={"/menu"}/> : <Navigate to={"/menu"}/>}/>
               <Route path='/menu' element={<Home />} />
+              <Route path='/Loading' element={<Loading />} />
               <Route path='/Logout' element={<Logout />} />
               <Route path='/menuLogado' element={<HomeLog />} />
               <Route path='/login' element={<Login />} />
@@ -47,7 +48,6 @@ const App = () => {
               <Route path='/colecao' element={<Colecao />} />
               <Route path='/conta' element={<Conta />} />
               <Route path='/tabuleiro' element={<Tabuleiro />} />
-              <Route path='/loading' element={<Loading />} />
               <Route path='/fila' element={<Fila />} />
               <Route path='/erro' element={<Erro />} />
               <Route path='/sucesso' element={<Sucesso />} />
