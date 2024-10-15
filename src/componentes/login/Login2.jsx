@@ -28,11 +28,10 @@ function Login() {
         <img src={gameIcon} alt="Jogo da Onça" className="game-logo" />
         </div>
         <nav className="menu-options">
-          <a href="#creditos">Créditos</a>
-          <a href="#regras">Regras</a>
-          <a href="#jogar">Jogar</a>
-          <a href="#cadastrar">Cadastrar</a>
-          <a href="#shop">Shop</a>
+          <a onClick={() => {navigate("/Cadastro")}}>Cadastrar</a>
+          <a onClick={() => {navigate("/tutorial")}}>Regras</a>
+          <a onClick={() => {navigate("/credito")}}>Créditos</a>
+          <a onClick={() => {navigate("/loja/skin")}}>Loja</a>
           <a href="#som">
             <img src={soundIcon} alt="Som do Jogo" className="sound-icon" />
           </a>
