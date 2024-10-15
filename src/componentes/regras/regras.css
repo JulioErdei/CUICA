@@ -39,11 +39,6 @@ header {
   justify-content: center;
 }
 
-.menu-icon-cadastro {
-  display: flex;
-  align-items: center;
-}
-
 .game-logo-cadastro {
   height: 50px;
   padding: 0px 40px;

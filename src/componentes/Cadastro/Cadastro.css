@@ -31,6 +31,10 @@ header {
   height: auto;
 }
 
+.amarelo{
+  color: #ffcc33;
+}
+
 .menu-cadastro {
   width: 100%;
   display: flex;
@@ -39,11 +43,6 @@ header {
   text-shadow: 5px 5px 2px #000;
   padding: 10px 20px;
   justify-content: center;
-}
-
-.menu-icon-cadastro {
-  display: flex;
-  align-items: center;
 }
 
 .game-logo-cadastro {
@@ -89,6 +88,7 @@ header {
   display: flex;
   justify-content: center;
   align-items: center;
+  border-radius: 0px 0px 30% 30%;
 }
 
 .div-form {

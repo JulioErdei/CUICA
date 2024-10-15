@@ -45,12 +45,13 @@ function Cadastro() {
 
   return (
     <div className="cadastro-container">
-      <header className="menu-cadastro"> 
-        <div className="menu-icon-cadastro">
-          <img src={gameIcon} alt="Jogo da Onça" className="game-logo-cadastro" />
-        </div>
+      <header className="menu-cadastro">                  
         <nav className="menu-options-cadastro">
+          <a onClick={() => {navigate("/menu")}}>
+            <img src={gameIcon} alt="Jogo da Onça" className="game-logo-cadastro" />
+          </a>
           <a onClick={() => {navigate("/login")}}>Login</a>
+          <a onClick={() => {navigate("/cadastro")}} className="amarelo">Cadastrar</a>
           <a onClick={() => {navigate("/tutorial")}}>Regras</a>
           <a onClick={() => {navigate("/credito")}}>Créditos</a>
           <a onClick={() => {navigate("/loja/moedas")}}>Loja</a>
