@@ -78,8 +78,8 @@ header {
     background-position: center;
     background-repeat: no-repeat;
     border-radius: 0px 0px 30% 30%;
-    width: 55vw;
-    height: 80vh;
+    width: 60vw;
+    height: 85vh;
     margin: 0 auto;
     display: flex;
     align-items: center;
@@ -121,12 +121,13 @@ header {
 .info-conta > .btn-atualiza{
     margin-left: 10px;
     width: 70%;
-    height: 80%;
+    height: 70%;
     font-size: 1.8em;
     font-family: 'Londrina Solid', cursive;
     color: #E6B789;
     background-color: #5E2C12;
     border: none;
+    margin: 15px;
 }
 
 .info-conta > .btn-atualiza:hover{

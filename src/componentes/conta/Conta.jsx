@@ -80,7 +80,7 @@ function Conta() {
           <a onClick={() => {navigate("/menu")}}>
             <img src={gameIcon} alt="Jogo da Onça" className="game-logo-cadastro" />
           </a>
-          <a className="amarelo" onClick={() => {navigate("/conta")}}>Perfil</a>
+          <a className="amarelo" onClick={() => {navigate("/conta")}}>Perfil </a>
           <a onClick={() => {navigate("/tutorial")}}>Regras</a>
           <a onClick={() => {navigate("/credito")}}>Créditos</a>
           <a onClick={() => {navigate("/loja/moedas")}}>Loja</a>
@@ -106,8 +106,8 @@ function Conta() {
                                 <label htmlFor="">EMAIL:</label>
                                 <input type="email" value={email} pattern="^\w.{2,}\u0040[a-z]{2,}.[a-z]{2,}\S"
                                 title="Formato esperado: seuemail@email.com"
-                                
-                                disabled/>
+                                disabled
+                                />
                             </div>
 
                             <div className="info-conta info-senha-conta">
