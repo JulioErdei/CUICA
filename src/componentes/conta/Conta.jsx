@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import React, { useState, useEffect } from "react";
 import { useNavigate } from 'react-router';
 import { toast } from 'react-toastify';
 import ContaService from '../../services/ContaService';
@@ -9,8 +9,26 @@ import useAuthConta from '/src/hooks/AuthConta';
 import { validatePassword } from '/src/utils/Regex.jsx';
 import gameIcon from '/public/assets/imagens/icones/icon2.png';
 import soundIcon from '/public/assets/imagens/icones/soundicon.png';
+import backgroundMusic from './sons/ambiente2.wav';
 
 function Conta() {
+    const [isPlaying, setIsPlaying] = useState(false);  // Estado para controlar o som
+    const [audio] = useState(new Audio(backgroundMusic));  // Instância do áudio
+  
+    // Efeito para controlar o início/parada da música quando o estado mudar
+    useEffect(() => {
+      if (isPlaying) {
+        audio.play();
+      } else {
+        audio.pause();
+      }
+    }, [isPlaying, audio]);
+  
+    // Alternar o estado do som (ativar/desativar)
+    const toggleSound = () => {
+      setIsPlaying(!isPlaying);
+    };
+
     const navigate = useNavigate();
     const [visibilityStatus, setVisibilityStatus] = useState(false);
     const { user } = useAuthConta();
@@ -57,27 +75,21 @@ function Conta() {
             <div className="bg-conta-container">
                 
             <div className="menu-superior-conta">
-                <header>
-                    <div className="menu-icon-cadastro">
-                    <img src={gameIcon} alt="Jogo da Onça" className="game-logo-cadastro" />
-                    </div>
-                    <nav className="menu-options-cadastro">
-                        <a href="#creditos">Créditos</a>
-                        <a href="#regras">Regras</a>
-                        <a href="#jogar">Jogar</a>
-                        <a href="#cadastrar">Cadastrar</a>
-                        <a href="#shop">Shop</a>
-                        <a href="#som">
-                            <img src={soundIcon} alt="Som do Jogo" className="sound-icon-cadastro" />
-                        </a>
-                    </nav>
-                </header>
-                   
-                    {/*<div className="titulo-conta">
-                        <div className="placa-titulo-conta">
-                            <h1>PERFIL</h1>
-                        </div>
-                    </div>*/}
+            <header className="menu-cadastro">                  
+        <nav className="menu-options-cadastro">
+          <a onClick={() => {navigate("/menu")}}>
+            <img src={gameIcon} alt="Jogo da Onça" className="game-logo-cadastro" />
+          </a>
+          <a className="amarelo" onClick={() => {navigate("/conta")}}>Perfil </a>
+          <a onClick={() => {navigate("/tutorial")}}>Regras</a>
+          <a onClick={() => {navigate("/credito")}}>Créditos</a>
+          <a onClick={() => {navigate("/loja/moedas")}}>Loja</a>
+          <a onClick={() => {navigate("/logout")}}>Logout</a>
+          <a onClick={toggleSound}>
+            <img src={soundIcon} alt="Som do Jogo" className="sound-icon-cadastro" />
+          </a>
+        </nav>
+      </header>
                 </div>
                 <div className="content-main-conta">
                     <div className="content-main-superior-conta">
@@ -91,12 +103,13 @@ function Conta() {
                                 <input type="text" value={userName} onChange={(e) => setUserName(e.target.value)} required/>
                             </div>
                             <div className="info-conta info-email-conta">
-                                <label htmlFor="">E-MAIL:</label>
+                                <label htmlFor="">EMAIL:</label>
                                 <input type="email" value={email} pattern="^\w.{2,}\u0040[a-z]{2,}.[a-z]{2,}\S"
                                 title="Formato esperado: seuemail@email.com"
-                                
-                                disabled/>
+                                disabled
+                                />
                             </div>
+
                             <div className="info-conta info-senha-conta">
                                 <label htmlFor="">SENHA:</label>
                                 <input type={visibilityStatus ? "text" : "password"} className='inp-senha' onChange={(e) => setSenha(e.target.value)} required/>

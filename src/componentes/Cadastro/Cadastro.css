@@ -20,31 +20,29 @@
   overflow: hidden;
 }
 
-/* Menu superior*/
-header{
-  position: sticky; 
-  top: 0;
+/*PADRÃO Menu superior*/
+header {
+  position: sticky;
   background-color: #19421c;
   padding: 10px 20px;
   display: flex;
-  justify-content: space-between; 
+  justify-content: space-between;
   align-items: center;
   height: auto;
 }
 
+.amarelo {
+  background-color: #ffe60093;    
+}
+
 .menu-cadastro {
   width: 100%;
-  display: flex; 
+  display: flex;
   align-items: center;
   background-color: #19421c;
   text-shadow: 5px 5px 2px #000;
   padding: 10px 20px;
   justify-content: center;
-}
-
-.menu-icon-cadastro {
-  display: flex;
-  align-items: center;
 }
 
 .game-logo-cadastro {
@@ -61,14 +59,16 @@ header{
 
 .menu-options-cadastro a {
   color: #f7d287;
+  padding: 4px;
   text-decoration: none;
   font-size: 24px;
   font-weight: bold;
-  text-shadow: 2px 2px 2px #000;
+  text-shadow: 3px 3px 3px #000;
 }
 
 .menu-options-cadastro a:hover {
   color: #ffcc33;
+  cursor: pointer;
 }
 
 .sound-icon-cadastro {
@@ -79,61 +79,57 @@ header{
 
 /*Estilizando o formulário de cadastro*/
 .form-background-cadastro {
+  height: 95%;
+  width: 40%;
   background-image: url('./images/fundo-forms8.png');
   background-size: contain;
   background-position: center;
   background-repeat: no-repeat;
-  padding: 40px 0;
   display: flex;
   justify-content: center;
   align-items: center;
-  min-height: 93vh;
-  width: 40%;
+  border-radius: 0px 0px 30% 30%;
 }
 
-form {
+.div-form {
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 65%;
-  height: auto;
-  gap: 2px;
+  width: 90%;
 }
 
 .cadastro-title {
   font-size: 52px;
   color: #57330e;
+  padding: 5px;
   font-weight: bold;
   text-shadow: 5px 5px 2px #000;
-  margin-bottom: 20px;
 }
 
 label {
   font-size: 20px;
+  padding-right: 4px;
   font-weight: bold;
   color: #f7d287;
   text-shadow: 3px 3px 3px #000;
 }
 
 input {
-  margin-bottom: 10px;
-  padding: 10px;
-  width: 70%;
+  width: 75%;
+  height: 40px;
   background-color: #f0d8a6;
   border: 2px solid #57330e;
   border-radius: 5px;
-  box-sizing: border-box; /* Garante que padding e borda não afetem o tamanho */
+  box-sizing: border-box;
 }
 
 button {
   background-image: url('images/placa5.png');
-  background-position: center;
-  padding: 12px 15px;
-  border: none;
   border-radius: 10px;
+  margin-bottom: 10px;
+  width: 40%;
+  height: 40px;
   cursor: pointer;
-  height: 25%;
-  width: 85%;
   font-size: 24px;
   color: #f0d8a6;
   font-weight: bold;
@@ -150,26 +146,76 @@ button:active {
   transform: scale(0.95);
 }
 
-/* Tornando o layout responsivo */
-@media (max-width: 600px) {
-  /* Ajuste para o formulário */
+/* Responsividade */
+
+/* Para telas menores que 1024px (tablets e menores) */
+@media (max-width: 1024px) {
   .form-background-cadastro {
-      width: 90%;
-      padding: 20px;
-      border-radius: 0 0 15px 15px;
+    width: 60%; /* Aumenta a largura do formulário para telas maiores */
   }
-  /* Ajuste para o menu */
+
   .menu-options-cadastro {
-      flex-direction: column; /* Faz com que as opções fiquem empilhadas */
-      gap: 10px; /* Ajusta o espaçamento entre os itens no mobile */
+    gap: 40px; /* Diminui o espaço entre os itens do menu */
   }
+
+  .cadastro-title {
+    font-size: 42px; /* Diminui o título para se ajustar em telas menores */
+  }
+
+  button {
+    width: 50%; /* Botão mais largo para preencher mais espaço */
+  }
+}
+
+/* Para telas menores que 768px (smartphones) */
+@media (max-width: 768px) {
+  .form-background-cadastro {
+    width: 80%; /* Expande o formulário para preencher mais a tela */
+  }
+
+  .menu-options-cadastro {
+    flex-direction: column;
+    gap: 20px; /* Menu em coluna para facilitar o toque em telas menores */
+  }
+
   .menu-options-cadastro a {
-      font-size: 18px; /* Diminui o tamanho das fontes no menu em telas menores */
+    font-size: 20px; /* Texto menor no menu */
   }
-  .game-logo-cadastro {
-      height: 40px; /* Ajusta o tamanho do ícone em telas menores */
+
+  .cadastro-title {
+    font-size: 36px; /* Reduz o tamanho do título */
   }
-  .sound-icon-cadastro {
-      height: 30px; /* Ajusta o ícone de som no mobile */
+
+  input {
+    width: 90%; /* Inputs mais largos para maior conforto de uso */
+  }
+
+  button {
+    width: 60%; /* Botões mais largos */
+  }
+}
+
+/* Para telas menores que 480px (celulares pequenos) */
+@media (max-width: 480px) {
+  .form-background-cadastro {
+    width: 90%; /* Quase 100% da tela para otimizar espaço */
+  }
+
+  .cadastro-title {
+    font-size: 28px; /* Título bem menor para caber bem */
+  }
+
+  label {
+    font-size: 16px; /* Labels menores para melhor ajuste */
+  }
+
+  input {
+    width: 100%; /* Inputs ocupando toda a largura */
+    height: 35px; /* Altura um pouco menor para telas pequenas */
+  }
+
+  button {
+    width: 80%; /* Botões largos em telas pequenas */
+    font-size: 20px;
   }
 }

@@ -1,9 +1,12 @@
 import React, { useState } from "react";
-import 'bootstrap/dist/css/bootstrap.min.css'
+import { useNavigate } from 'react-router';
 import "./Logout.css";
 
 
 function Logout() {
+
+  const navigate = useNavigate();
+
   const [formData, setFormData] = useState({
 
   });

@@ -1,46 +1,45 @@
-import { useNavigate } from 'react-router-dom';
-// import { useState } from 'react';
+
+import React, { useState, useEffect } from "react";
+import { useNavigate } from 'react-router';
 import './credito.css';
 import gameIcon from './images/icon2.png';
-import soundIcon from './images/sound-on.png';
+import soundIcon from './images/soundicon.png';
+import backgroundMusic from './sons/ambiente2.wav';
 
-// import soundOn from './images/sound-on.png';
-// import soundOff from './images/sound-on.png';
-// import audio from '../../../public/assets/sons/ambiente/ambiente1.wav'
 
 function Credito() {
-  const navigate = useNavigate();
-  // const [sound, setSound] = useState(true);
-  
-  // const soundControl = () => {
-  //   setSound(!sound);
-  //     if(sound) {
-  //       console.log("Som desligado");
-  //       audio.play().catch(error => console.error("Erro ao tocar a música:", error));
-  //     } else {
-  //       console.log("Som ligado");
-  //       audio.pause();
-  //     }
-  // }
+  const [isPlaying, setIsPlaying] = useState(false);  // Estado para controlar o som
+  const [audio] = useState(new Audio(backgroundMusic));  // Instância do áudio
 
+  // Efeito para controlar o início/parada da música quando o estado mudar
+  useEffect(() => {
+    if (isPlaying) {
+      audio.play();
+    } else {
+      audio.pause();
+    }
+  }, [isPlaying, audio]);
+
+  // Alternar o estado do som (ativar/desativar)
+  const toggleSound = () => {
+    setIsPlaying(!isPlaying);
+  };
+
+  const navigate = useNavigate();
   return (
   <div className="container">
-      <header className="menu"> 
-        <div className="menu-icon">
-          <img src={gameIcon} alt="Jogo da Onça" className="game-logo" />
-        </div>
-        <nav className="menu-options">
-          <a onClick={() => {navigate("/login")}}>Login</a>
-          <a onClick={() => {navigate("/Cadastro")}}>Cadastrar</a>
-          <a onClick={() => {navigate("/tutorial")}}>Regras</a>
-          <a onClick={() => {navigate("/credito")}}>Créditos</a>
-          <a onClick={() => {navigate("/loja/skin")}}>Loja</a>
-          <a href="#som">
-            <img src={soundIcon} alt="Som do Jogo" className="sound-icon" />
+      <header className="menu-cadastro">                  
+        <nav className="menu-options-cadastro">
+          <a onClick={() => {navigate("/menu")}}>
+            <img src={gameIcon} alt="Jogo da Onça" className="game-logo-cadastro" />
           </a>
-           {/* <a onClick={soundControl}>
-            <img src={sound ? soundOn : soundOff} alt="Som do Jogo" className="sound-icon" />
-          </a> */}
+          <a onClick={() => {navigate("/login")}}>Login</a>
+          <a onClick={() => {navigate("/tutorial")}}>Regras</a>
+          <a onClick={() => {navigate("/Cadastro")}}>Cadastrar</a>
+          <a onClick={() => {navigate("/loja/moedas")}}>Loja</a>
+          <a onClick={toggleSound}>
+            <img src={soundIcon} alt="Som do Jogo" className="sound-icon-cadastro" />
+          </a>
         </nav>
       </header>
         <div className="quadro">
