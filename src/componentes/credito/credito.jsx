@@ -1,8 +1,28 @@
+import { useNavigate } from 'react-router-dom';
+// import { useState } from 'react';
 import './credito.css';
 import gameIcon from './images/icon2.png';
-import soundIcon from './images/soundicon.png';
+import soundIcon from './images/sound-on.png';
+
+// import soundOn from './images/sound-on.png';
+// import soundOff from './images/sound-on.png';
+// import audio from '../../../public/assets/sons/ambiente/ambiente1.wav'
 
 function Credito() {
+  const navigate = useNavigate();
+  // const [sound, setSound] = useState(true);
+  
+  // const soundControl = () => {
+  //   setSound(!sound);
+  //     if(sound) {
+  //       console.log("Som desligado");
+  //       audio.play().catch(error => console.error("Erro ao tocar a música:", error));
+  //     } else {
+  //       console.log("Som ligado");
+  //       audio.pause();
+  //     }
+  // }
+
   return (
   <div className="container">
       <header className="menu"> 
@@ -10,14 +30,17 @@ function Credito() {
           <img src={gameIcon} alt="Jogo da Onça" className="game-logo" />
         </div>
         <nav className="menu-options">
-          <a href="#creditos">Créditos</a>
-          <a href="#regras">Regras</a>
-          <a href="#jogar">Jogar</a>
-          <a href="#cadastrar">Cadastrar</a>
-          <a href="#shop">Shop</a>
+          <a onClick={() => {navigate("/login")}}>Login</a>
+          <a onClick={() => {navigate("/Cadastro")}}>Cadastrar</a>
+          <a onClick={() => {navigate("/tutorial")}}>Regras</a>
+          <a onClick={() => {navigate("/credito")}}>Créditos</a>
+          <a onClick={() => {navigate("/loja/skin")}}>Loja</a>
           <a href="#som">
             <img src={soundIcon} alt="Som do Jogo" className="sound-icon" />
           </a>
+           {/* <a onClick={soundControl}>
+            <img src={sound ? soundOn : soundOff} alt="Som do Jogo" className="sound-icon" />
+          </a> */}
         </nav>
       </header>
         <div className="quadro">
@@ -28,21 +51,6 @@ function Credito() {
                   Desenvolvimento de Tecnologia na FATEC São Paulo.</p>
                 </div>
                 <div className='texto'>
-                  {/* <dl>
-                    <dt>Desenvolvimento Jogo e fucionalidades:</dt>
-                    <dd>Renato Caetité</dd>
-                    <dd>Guilherme Santo</dd>
-                    <dd>Isabela Ramos</dd>
-                    <dt>Desenvolvimento site:</dt>
-                    <dd>Julio Cezar Erdei</dd>
-                    <dd>Sofia de Mello</dd>
-                    <dd>Tamires Barboza</dd>
-                    <dd>Rodrigo Marcato </dd>
-                    <dd>Pedro Henrique</dd>
-                    <dd>Diogo Souza </dd>
-                    <dt>Arte e Design: </dt>
-                    <dd>Isabela Ramos</dd>
-                  </dl> */}
                   <ul>
                     <li className='list-title'>Desenvolvimento Jogo e fucionalidades:</li>
                     <li className='list-text'>Renato Caetité</li>
@@ -59,7 +67,7 @@ function Credito() {
                     <li className='list-text'>Isabela Ramos</li>
                   </ul>
                 </div>
-              <button type="submit">Fechar</button>
+              <button type="submit" onClick={() => {navigate("/menu")}}>Fechar</button>
             </div>
         </div>
     </div>
