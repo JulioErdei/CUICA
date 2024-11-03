@@ -37,10 +37,39 @@ function Cadastro() {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    // chamada para o backend
-    console.log(formData);
+
+    if (formData.senha !== formData.confirmacaoSenha) {
+      alert("As senhas não coincidem!");
+      return;
+    }
+
+    try {
+      const response = await fetch("http://localhost:5166/api/user", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          nomeCompleto: formData.nomeCompleto,
+          dataNascimento: formData.dataNascimento,
+          email: formData.email,
+          senha: formData.senha,
+        }),
+      });
+
+      if (response.ok) {
+        alert("Cadastro realizado com sucesso!");
+        navigate("/login");  // Navegar para a página de login após o cadastro bem-sucedido
+      } else {
+        const errorData = await response.json();
+        alert(`Erro: ${errorData.message || "Não foi possível realizar o cadastro"}`);
+      }
+    } catch (error) {
+      console.error("Erro na requisição:", error);
+      alert("Ocorreu um erro ao tentar realizar o cadastro. Tente novamente mais tarde.");
+    }
   };
 
   return (
