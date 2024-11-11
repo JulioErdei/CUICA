@@ -1,36 +1,41 @@
-import React, { useState } from "react";
+import React from "react";
 import { useNavigate } from 'react-router';
 import "./Logout.css";
+import { useUser } from "../../axios/userContext";
 
 
 function Logout() {
 
+  const {user, setUser} = useUser();
   const navigate = useNavigate();
 
-  const [formData, setFormData] = useState({
+  console.log(user);
 
-  });
-
-  const handleChange = (e) => {
-    setFormData({ ...formData, [e.target.name]: e.target.value });
+  const handleSubmit = () => {
+    setUser(null);
+    localStorage.removeItem('user');
+    navigate("/menu");
   };
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    // chamada para o backend
-    console.log(formData);
-  };
+  if(!user){
+    return (
+      <div>
+        <h1>Você precisa fazer Login</h1>
+        <p onClick={() => navigate('/login')}>Clique aqui</p>
+      </div>
+    )
+  }
 
   return (
-    <div class="Logout-container">
+    <div className="Logout-container">
       <div className="form-background">
         <form onSubmit={handleSubmit}>
           <div className="Logout-title">
             <h1>Deseja mesmo encerrar sessão?</h1>
           </div>
-          <div class="button-container">
+          <div className="button-container">
             <button className="button1">Sim</button>
-            <button className="button2">Não</button>
+            <button className="button2" onClick={() => navigate('/menu')}>Não</button>
           </div>
           <div className="Plano-de-Fundo"></div>
         </form>
@@ -42,3 +47,50 @@ function Logout() {
 }
 
 export default Logout;
+
+
+
+
+
+// import React, { useState } from "react";
+// import { useNavigate } from 'react-router';
+// import "./Logout.css";
+// import { useUser } from "../../axios/userContext";
+
+
+// function Logout() {
+
+//   const navigate = useNavigate();
+
+//   const {user, setUser} = useUser(); 
+
+//   const handleSubmit = (e) => {
+//     e.preventDefault();
+//     if(user){
+//       console.log('Logout: ', user.name);
+//     }
+//     setUser(null);
+//     navigate("/menu");
+//   };
+
+//   return (
+//     <div className="Logout-container">
+//       <div className="form-background">
+//         <form onSubmit={handleSubmit}>
+//           <div className="Logout-title">
+//             <h1>Deseja mesmo encerrar sessão?</h1>
+//           </div>
+//           <div className="button-container">
+//             <button className="button1">Sim</button>
+//             <button className="button2" onClick={() => navigate('/tutorial')}>Não</button>
+//           </div>
+//           <div className="Plano-de-Fundo"></div>
+//         </form>
+//       </div>
+//     </div>
+
+//   );
+
+// }
+
+// export default Logout;

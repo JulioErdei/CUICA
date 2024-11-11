@@ -10,6 +10,7 @@ import { validatePassword } from '/src/utils/Regex.jsx';
 import gameIcon from '/public/assets/imagens/icones/icon2.png';
 import soundIcon from '/public/assets/imagens/icones/soundicon.png';
 import backgroundMusic from './sons/ambiente2.wav';
+import Header from "../header/header";
 
 function Conta() {
     const [isPlaying, setIsPlaying] = useState(false);  // Estado para controlar o som
@@ -75,7 +76,7 @@ function Conta() {
             <div className="bg-conta-container">
                 
             <div className="menu-superior-conta">
-            <header className="menu-cadastro">                  
+            {/* <header className="menu-cadastro">                  
         <nav className="menu-options-cadastro">
           <a onClick={() => {navigate("/menu")}}>
             <img src={gameIcon} alt="Jogo da Onça" className="game-logo-cadastro" />
@@ -89,7 +90,8 @@ function Conta() {
             <img src={soundIcon} alt="Som do Jogo" className="sound-icon-cadastro" />
           </a>
         </nav>
-      </header>
+      </header> */}
+      <Header />
                 </div>
                 <div className="content-main-conta">
                     <div className="content-main-superior-conta">

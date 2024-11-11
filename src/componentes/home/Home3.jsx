@@ -10,6 +10,7 @@ import VolumeOnIcon from '/public/assets/imagens/icones/VolumeOnIcon';
 import useAuthConta from '/src/hooks/AuthConta';
 import useSomAmbiente from '/src/hooks/SomAmbienteHook';
 import useTabuleiro from '/src/hooks/TabuleiroHook';
+import Header from '../header/header';
 
 function Home() {
     const navigate = useNavigate();
@@ -51,11 +52,11 @@ function Home() {
     return (
     <div className="bg-home">
     <div className="bg-home-container">
-      <header className="menu-superior"> 
+      {/* <header className="menu-superior">  */}
         {/*<div className="menu-icon-cadastro">
           <img src={gameIcon} alt="Jogo da Onça" className="game-logo-cadastro" />
         </div>*/}
-        <nav className="menu-infos-user">
+        {/* <nav className="menu-infos-user">
             <button className="btn menu-item" onClick={() => {navigate("/login")}}><p className="texto-p">JOGAR</p></button>
             <button className="btn menu-item" onClick={() => {navigate("/Cadastro")}}><p className="texto-p">CADASTRAR</p></button>
             <button className="btn menu-item" onClick={() => {navigate("/loja/skins")}}><p className="texto-p">SHOP</p></button>
@@ -66,7 +67,8 @@ function Home() {
                 {musicaStatus ? <VolumeOnIcon /> : <VolumeOffIcon />}
             </button>
         </div>
-      </header>
+      </header> */}
+      <Header />
         <div className="main">
             <div className="TITULO">
                 <h1 className="Texto-Tit">JOGO DA ONÇA</h1>

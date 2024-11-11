@@ -21,18 +21,23 @@ import Tutorial from './componentes/regras/regras.jsx';
 import Vitoria from './componentes/modals/vitoria/vitoria.jsx';
 import Tabuleiro from './componentes/tabuleiro/Tabuleiro.jsx';
 import GlobalProvider from './providers/GlobalProvider.jsx';
-import Cadastro from './componentes/cadastro/Cadastro.jsx';
+import Cadastro from './componentes/Cadastro/Cadastro.jsx';
 import useAuthConta from '/src/hooks/AuthConta';
 import Credito from './componentes/credito/credito.jsx';
 import Logout from './componentes/logout/Logout.jsx';
 import Loading from './componentes/Loading/Loading.jsx';
+import { UserProvider } from './axios/userContext.jsx';
+import { AuthProvider } from './contexts/AuthContext.jsx';
+import Profile from './componentes/profile/profile.jsx';
 
 
 const App = () => {
   const { signed } = useAuthConta();
   return (
     <>
-      <BrowserRouter>
+    <AuthProvider>
+      <UserProvider>
+        <BrowserRouter>
         <GlobalProvider>
           <Routes>
               <Route path='/' element={signed ? <Navigate to={"/menu"}/> : <Navigate to={"/menu"}/>}/>
@@ -59,9 +64,12 @@ const App = () => {
               <Route path='/compras/moedas/:id' element={<CompraMoedas />} />
               <Route path='/compras/skins/:id' element={<CompraSkins />} />
               <Route path='/credito' element={<Credito />} />
-          </Routes>
-        </GlobalProvider>
-      </BrowserRouter>
+              <Route path='/perfil' element={<Profile />} />
+            </Routes>
+          </GlobalProvider>
+        </BrowserRouter>
+      </UserProvider>
+      </AuthProvider>
     </>
   )
 }

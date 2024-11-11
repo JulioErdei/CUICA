@@ -4,6 +4,7 @@ import "./HomeLog.css";
 import gameIcon from './images/icon2.png';
 import soundIcon from './images/soundicon.png';
 import useSomAmbiente from '/src/hooks/SomAmbienteHook';
+import Header from "../header/header";
 
 function Home() {
 
@@ -12,7 +13,7 @@ function Home() {
 
   return (
     <div className="HomeLog-container">
-      <header className="HomeLog-cadastro"> 
+      {/* <header className="HomeLog-cadastro"> 
         <div className="menu-icon-HomeLog">
           <img src={gameIcon} alt="Jogo da Onça" className="game-logo-HomeLog" />
         </div>
@@ -25,7 +26,8 @@ function Home() {
             <img src={soundIcon} alt="Som do Jogo" className="sound-icon-cadastro" />
           </a>
           </nav>
-      </header>
+      </header> */}
+      <Header />
       <div className="Formhome">
         <div className="logo-homeLog">
           <div className="buton-jogar">

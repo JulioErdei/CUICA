@@ -4,8 +4,11 @@ import "./regras.css";
 import gameIcon from './images/icon2.png';
 import soundIcon from './images/soundicon.png';
 import backgroundMusic from './sons/ambiente2.wav';
+import Header from "../header/header";
+
 
 function Regras() {
+
   const navigate = useNavigate();
 
   const [isPlaying, setIsPlaying] = useState(false);  // Estado para controlar o som
@@ -27,7 +30,7 @@ function Regras() {
 
   return (
   <div className="container">
-      <header className="menu-cadastro">                  
+      {/* <header className="menu-cadastro">                  
         <nav className="menu-options-cadastro">
           <a onClick={() => {navigate("/menu")}}>
             <img src={gameIcon} alt="Jogo da Onça" className="game-logo-cadastro" />
@@ -40,7 +43,8 @@ function Regras() {
             <img src={soundIcon} alt="Som do Jogo" className="sound-icon-cadastro" />
           </a>
         </nav>
-      </header>
+      </header> */}
+      <Header />
         <div className="q">
             <div className='q-c'>
               <div className="ti">Regras</div>
@@ -82,3 +86,47 @@ function Regras() {
 }
 
 export default Regras;
+
+
+// usando a tela para testar o LogOut
+
+// import React from 'react';
+// import { useUser } from "../../axios/userContext"; // Acesso ao contexto
+// import { useNavigate } from 'react-router-dom'; // Acesso à navegação
+// import Header from '../header/header';
+
+// function Tutorial() {
+//   const { user, setUser } = useUser(); // Acessa o estado do usuário e a função setUser
+//   const navigate = useNavigate(); // Função para navegação entre telas
+
+//   console.log(user);
+
+//   // Função para fazer logout
+//   const handleLogout = () => {
+//     // Limpar os dados do usuário no contexto
+//     setUser(null);
+    
+//     // Remover os dados do usuário do localStorage
+//     localStorage.removeItem('user');
+//     console.log(user);
+    
+//     // Redirecionar para a tela de login
+//     navigate('/tabuleiro'); // Você pode mudar isso dependendo da sua estrutura de rotas
+//   };
+
+//   if (!user) {
+//     return <p>Você precisa estar logado para acessar o tutorial.</p>;
+//   }
+
+//   return (
+//     <div>
+//       <Header />
+//       <h1>Bem-vindo ao tutorial, {user.username}!</h1>
+//       <p>Conteúdo do tutorial vai aqui.</p>
+      
+//       <button onClick={handleLogout}>Logout</button>
+//     </div>
+//   );
+// }
+
+// export default Tutorial;

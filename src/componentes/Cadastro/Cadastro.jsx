@@ -4,17 +4,19 @@ import "./Cadastro.css";
 import gameIcon from './images/icon2.png';
 import soundIcon from './images/soundicon.png';
 import backgroundMusic from './sons/ambiente2.wav';
+import api from "../../axios/config";
+import Header from "../header/header";
 
-function Cadastro() {
+function Cadastro(){
   const navigate = useNavigate();
   
-  const [formData, setFormData] = useState({
-    nomeCompleto: "",
-    dataNascimento: "",
-    email: "",
-    senha: "",
-    confirmacaoSenha: "",
-  });
+  const [username, setUsername] = useState('');
+  const [email, setEmail] = useState('');
+  const [birthday, setBirthday] = useState('');
+  const [passwordHash, setPasswordHash] = useState('');
+  const [confirmPassword, setConfirmPassword] = useState('');
+  const [loading, setLoading] = useState(false);
+  const [erro, setErro] = useState('');
 
   const [isPlaying, setIsPlaying] = useState(false);  // Estado para controlar o som
   const [audio] = useState(new Audio(backgroundMusic));  // Instância do áudio
@@ -33,19 +35,47 @@ function Cadastro() {
     setIsPlaying(!isPlaying);
   };
 
-  const handleChange = (e) => {
-    setFormData({ ...formData, [e.target.name]: e.target.value });
-  };
-
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    // chamada para o backend
-    console.log(formData);
-  };
+    if(!username || !email || !passwordHash){
+      setErro('Preencha todos os campos');
+      return;
+    }
+    setErro('');
+    setLoading(true);
+    const userData = {username, email, birthday, passwordHash};
+    try{
+      const response = await api.post('/user', userData, {
+        headers: {
+          'Content-Type': 'application/json',
+        }
+      });
+      if(passwordHash === confirmPassword){
+        if(response.status === 200) {
+          console.log('Cadastro realizado com sucesso! Informações enviadas: ' + userData.username);
+          navigate('/login');
+          setUsername('');
+          setEmail('');
+          setBirthday('');
+          setPasswordHash('');
+          setConfirmPassword('');
+        } else {
+          throw new Error ('Erro ao cadastrar, tente novamente.');
+        }
+      } else {
+        throw new Error ('Senhas diferentes.');
+      }
+    } catch (error) {
+      console.log('Erro na requisição: ' , error)
+      setErro('Erro ao cadastrar, tente novamente.');
+    } finally {
+      setLoading(false);
+    }
+  }
 
   return (
     <div className="cadastro-container">
-      <header className="menu-cadastro">                  
+      {/* <header className="menu-cadastro">                  
         <nav className="menu-options-cadastro">
           <a onClick={() => {navigate("/menu")}}>
             <img src={gameIcon} alt="Jogo da Onça" className="game-logo-cadastro" />
@@ -59,47 +89,54 @@ function Cadastro() {
             <img src={soundIcon} alt="Som do Jogo" className="sound-icon-cadastro" />
           </a>
         </nav>
-      </header>
+      </header> */}
+      <Header />
       <div className="form-background-cadastro">
         <div className="div-form">
           <form onSubmit={handleSubmit}>
             <div className="cadastro-title">Cadastro</div>
-            <label>Nome Completo</label>
+            <label htmlFor="username">Nome Completo</label>
             <input
               type="text"
               name="nomeCompleto"
-              value={formData.nomeCompleto}
-              onChange={handleChange}
+              value={username}
+              onChange={(e) => setUsername(e.target.value)}
             />
-            <label>Data de Nascimento</label>
+            <label htmlFor="birthday">Data de Nascimento</label>
             <input
               type="date"
               name="dataNascimento"
-              value={formData.dataNascimento}
-              onChange={handleChange}
+              value={birthday}
+              onChange={(e) => setBirthday(e.target.value)}
             />
-            <label>Email</label>
+            <label htmlFor="email">Email</label>
             <input
               type="email"
               name="email"
-              value={formData.email}
-              onChange={handleChange}
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
             />
-            <label>Senha</label>
+            <label htmlFor="passwordHash">Senha</label>
             <input
               type="password"
               name="senha"
-              value={formData.senha}
-              onChange={handleChange}
+              value={passwordHash}
+              onChange={(e) => setPasswordHash(e.target.value)}
             />
-            <label>Confirmação de Senha</label>
+            <label htmlFor="confirmPassword">Confirmação de Senha</label>
             <input
               type="password"
               name="confirmacaoSenha"
-              value={formData.confirmacaoSenha}
-              onChange={handleChange}
+              value={confirmPassword}
+              onChange={(e) => setConfirmPassword(e.target.value)}
             />
-            <button type="submit">AVANÇAR</button>
+
+            {erro && <p style={{color: 'red'}}>{erro}</p>}
+            {loading && <p>Carregando...</p>}
+
+            <button type="submit" disabled={loading}>
+              {loading? 'Cadastrando...' : 'Cadastrar'}
+            </button>
           </form>
         </div>
       </div>

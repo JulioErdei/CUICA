@@ -3,6 +3,7 @@ import "./Confirmarcompra.css";
 import gameIcon from './img/icon2.png';
 import soundIcon from './img/soundicon.png';
 import coinImage from "./img/Bastante.png";
+import Header from "../header/header";
 
 function Confirmarcompra() {
   const [formData, setFormData] = useState({
@@ -23,7 +24,7 @@ function Confirmarcompra() {
   return (
 
         <div class="Confirmarcompra-container">
-          <header className="menu">
+          {/* <header className="menu">
         <div className="menu-icon">
         <img src={gameIcon} alt="Jogo da Onça" className="game-logo" />
         </div>
@@ -37,7 +38,8 @@ function Confirmarcompra() {
             <img src={soundIcon} alt="Som do Jogo" className="sound-icon" />
           </a>
         </nav>
-      </header>
+      </header> */}
+      <Header />
         <div className="form-background">
             <form onSubmit={handleSubmit}>
               <div className="Confirmarcompra-title">Adquirir Moedas?</div>

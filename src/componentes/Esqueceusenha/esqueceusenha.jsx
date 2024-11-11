@@ -1,7 +1,9 @@
 import React, { useState } from "react";
-import "./esqueceusenha.css"; 
+import "./esqueceusenha.css";
+import './Login2.css';
 import gameIcon from './img/icon2.png';
 import soundIcon from './img/soundicon.png';
+import Header from "../header/header";
 
 function Esqueceusenha() {
   const [formData, setFormData] = useState({
@@ -21,7 +23,7 @@ function Esqueceusenha() {
   return (
 
     <div class="Esqueceusenha-container">
-      <header className="menu">
+      {/* <header className="menu">
         <div className="menu-icon">
         <img src={gameIcon} alt="Jogo da Onça" className="game-logo" />
         </div>
@@ -35,7 +37,8 @@ function Esqueceusenha() {
             <img src={soundIcon} alt="Som do Jogo" className="sound-icon" />
           </a>
         </nav>
-      </header>
+      </header> */}
+      <Header />
       <div className="form-background">
             <form onSubmit={handleSubmit}>
               <div className="Esqueceusenha-title">Redefinir Senha</div>

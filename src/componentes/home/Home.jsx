@@ -4,6 +4,7 @@ import "./Home.css";
 import gameIcon from './images/icon2.png';
 import soundIcon from './images/soundicon.png';
 import backgroundMusic from './sons/ambiente2.wav';
+import Header from "../header/header";
 
 function Home() {
 
@@ -29,7 +30,7 @@ function Home() {
 
   return (
     <div className="cadastro-container">
-      <header className="menu-cadastro">                  
+      {/* <header className="menu-cadastro">                  
         <nav className="menu-options-cadastro">
           <a onClick={() => {navigate("/menu")}}>
             <img src={gameIcon} alt="Jogo da Onça" className="game-logo-cadastro" />
@@ -43,7 +44,8 @@ function Home() {
             <img src={soundIcon} alt="Som do Jogo" className="sound-icon-cadastro" />
           </a>
         </nav>
-      </header>
+      </header> */}
+      <Header />
       <div className="Formhome1">
         <div className="logo-home">
         </div>

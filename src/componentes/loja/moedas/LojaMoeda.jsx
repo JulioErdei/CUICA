@@ -8,6 +8,7 @@ import useAuthConta from '/src/hooks/AuthConta';
 import LojaMoedaService from '/src/services/LojaMoedasService';
 import gameIcon from './img/icon2.png';
 import soundIcon from './img/soundicon.png';
+import Header from '../../header/header';
 
 function LojaMoeda() {
     const navigate = useNavigate()
@@ -66,7 +67,7 @@ function LojaMoeda() {
     return(
         <section className="bg-loja-moeda">
             <div className="bg-loja-moeda-container" id="bg-lojaMoeda">
-                <header className="menu-loja">                  
+                {/* <header className="menu-loja">                  
                     <nav className="menu-options-loja">
                         <a onClick={() => {navigate("/menu")}}>
                             <img src={gameIcon} alt="Jogo da Onça" className="game-logo-loja" />
@@ -75,7 +76,8 @@ function LojaMoeda() {
                         <a onClick={() => {navigate("/credito")}}>Créditos</a>
                         <a onClick={() => {navigate("/Logout")}}>Log Out</a>
                     </nav>
-                </header>
+                </header> */}
+                <Header />
                 <div className="form-background-loja">
                     <div className="moedas-atuais-loja-moeda">
                         <div className="item-qtde-loja-moeda moedas-loja-moeda">
