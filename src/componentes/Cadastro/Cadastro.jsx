@@ -72,7 +72,6 @@ function Cadastro(){
       setLoading(false);
     }
   }
-
   return (
     <div className="cadastro-container">
       {/* <header className="menu-cadastro">                  

@@ -30,6 +30,7 @@ const Header = () => {
         <a onClick={() => { navigate("/menu"); }}>
           <img src={gameIcon} alt="Jogo da Onça" className="game-logo-cadastro" />
         </a>
+        <a onClick={() => { navigate("/cadastro"); }}>Cadastro</a>
         <a onClick={() => { navigate("/login"); }}>Login</a>
         <a onClick={() => { navigate("/tutorial"); }}>Regras</a>
         <a onClick={() => { navigate("/credito"); }}>Créditos</a>
