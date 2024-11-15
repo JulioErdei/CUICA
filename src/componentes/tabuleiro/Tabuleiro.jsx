@@ -4,9 +4,9 @@ import './Tabuleiro.css';  // Importando o CSS
 function Tabuleiro() {
     return (
         <div className="container">
-            <iframe frameborder="0"
+            <iframe frameBorder="0"
             src="https://itch.io/embed-upload/11908745?color=333333" 
-            allowfullscreen="" width="100%" height="100%">
+            allowFullScreen="" width="100%" height="100%">
                 <a href="https://renatoccz.itch.io/jogo-da-onca">
                     Play Jogo da Onça on itch.io
                 </a>

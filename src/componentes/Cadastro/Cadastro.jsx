@@ -45,6 +45,9 @@ function Cadastro(){
     setLoading(true);
     const userData = {username, email, birthday, passwordHash};
     try{
+
+      //validar inputs ---------------------------------
+
       const response = await api.post('/user', userData, {
         headers: {
           'Content-Type': 'application/json',
