@@ -36,12 +36,9 @@ const Header = () => {
 
   return (
     <header className="menu-cadastro">
-      
-
         {/* Exibindo o nome do usuário no canto direito */}
         {userLocal ? (
           <nav className="menu-options-cadastro">
-          <a onClick={() => {localStorage.clear()}}>limpa</a>
           <a onClick={() => { navigate("/menuLogado"); }}>
             <img src={gameIcon} alt="Jogo da Onça" className="game-logo-cadastro" />
           </a>

@@ -57,9 +57,9 @@ function Login() {
   // const userLocal = JSON.parse(localStorage.getItem('user'));
   // console.log(userLocal);
   // console.log(userLocal.username);
-        // navigate('/tutorial');
-        // setEmail('');
-        // setPasswordHash('');
+        navigate('/menuLogado');
+        setEmail('');
+        setPasswordHash('');
       }
     }catch(err) {
       setError('credenciais inválidas');

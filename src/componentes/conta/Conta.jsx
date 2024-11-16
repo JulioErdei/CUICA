@@ -85,7 +85,7 @@ function Conta() {
     //     toast.error("Erro ao atualizar informações!\nTente novamente!");
     // }
 
-    const handleChange = async e => {
+    const handleChange = async () => {
         e.preventDefault();
         console.log('foi')
         try {

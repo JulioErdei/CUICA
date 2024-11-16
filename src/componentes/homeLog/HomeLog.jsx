@@ -11,6 +11,10 @@ function Home() {
   const navigate = useNavigate();
   const { toggleMusica, musicaStatus } = useSomAmbiente();
 
+  const handleNavigate = () => {
+    navigate('https://renatoccz.itch.io/jogo-da-onca')
+  }
+
   return (
     <div className="HomeLog-container">
       {/* <header className="HomeLog-cadastro"> 
@@ -31,7 +35,7 @@ function Home() {
       <div className="Formhome">
         <div className="logo-homeLog">
           <div className="buton-jogar">
-            <button type="submit">JOGAR</button>
+            <button type="submit" onClick={() => {handleNavigate}}>JOGAR</button>
           </div>
         </div>
       </div>
