@@ -43,7 +43,9 @@ function Cadastro(){
     }
     setErro('');
     setLoading(true);
-    const userData = {username, email, birthday, passwordHash};
+    const coins = 20;
+    const userData = {username, email, birthday, passwordHash, coins};
+    console.log(userData)
     try{
 
       //validar inputs ---------------------------------
@@ -53,6 +55,7 @@ function Cadastro(){
           'Content-Type': 'application/json',
         }
       });
+      console.log(response)
       if(passwordHash === confirmPassword){
         if(response.status === 200) {
           console.log('Cadastro realizado com sucesso! Informações enviadas: ' + userData.username);
@@ -103,6 +106,8 @@ function Cadastro(){
               name="nomeCompleto"
               value={username}
               onChange={(e) => setUsername(e.target.value)}
+              required
+              minLength={3}
             />
             <label htmlFor="birthday">Data de Nascimento</label>
             <input
@@ -117,6 +122,7 @@ function Cadastro(){
               name="email"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
+              required
             />
             <label htmlFor="passwordHash">Senha</label>
             <input
@@ -124,6 +130,8 @@ function Cadastro(){
               name="senha"
               value={passwordHash}
               onChange={(e) => setPasswordHash(e.target.value)}
+              required
+              minLength={3}
             />
             <label htmlFor="confirmPassword">Confirmação de Senha</label>
             <input
@@ -131,6 +139,8 @@ function Cadastro(){
               name="confirmacaoSenha"
               value={confirmPassword}
               onChange={(e) => setConfirmPassword(e.target.value)}
+              required
+              minLength={3}
             />
 
             {erro && <p style={{color: 'red'}}>{erro}</p>}

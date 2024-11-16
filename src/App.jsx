@@ -28,7 +28,6 @@ import Logout from './componentes/logout/Logout.jsx';
 import Loading from './componentes/Loading/Loading.jsx';
 import { UserProvider } from './axios/userContext.jsx';
 import { AuthProvider } from './contexts/AuthContext.jsx';
-import Profile from './componentes/profile/profile.jsx';
 
 const App = () => {
   const { signed } = useAuthConta();
@@ -63,7 +62,6 @@ const App = () => {
               <Route path='/compras/moedas/:id' element={<CompraMoedas />} />
               <Route path='/compras/skins/:id' element={<CompraSkins />} />
               <Route path='/credito' element={<Credito />} />
-              <Route path='/perfil' element={<Profile />} />
             </Routes>
           </GlobalProvider>
         </BrowserRouter>

@@ -37,10 +37,15 @@ const Header = () => {
   };
 
   const userLocal = localStorage.getItem('username');
+  var cont = 1
+  if(user !== null & cont === 1) {
+    console.log(userLocal);
+    cont = 2;
+  }
 
   return (
     <header className="menu-cadastro">
-      <nav className="menu-options-cadastro">
+        {/* Exibindo o nome do usuário no canto direito */}
         {userLocal ? (
           <>
             <Link to="/menuLogado">
