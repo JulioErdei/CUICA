@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { toast } from "react-toastify";
 import './LojaMoeda.css';
@@ -15,30 +15,57 @@ function LojaMoeda() {
     const navigate = useNavigate()
     const { user } = useAuthConta();
 
-    const userLocalCoins =localStorage.getItem('coins');
-    const userLocalEmail =localStorage.getItem('email');
-    // const [coins, setCoins] = useState();
+    // const userLocalEmail =localStorage.getItem('email');
+    // const [coins, setCoins] = useState(0);
 
-    const handleBuy = async e => {
-        // e.preventDefault();
-        var coins = (e.target.value);
-        coins = parseFloat(coins);
-        var convert = parseFloat(userLocalCoins);
-        console.log(coins)
+    // useEffect(() => {
+    //     const userLocalCoins = localStorage.getItem('coins');
+    //     setCoins(userLocalCoins ? parseFloat(userLocalCoins, 10) : 0) 
+    // }, []);
+
+    // const saveCoins = async (coins) => {
+    //     try {
+    //         await api.put('/user', {'email': userLocalEmail, coins});
+    //     }catch(error){
+    //         console.log('Não foi possivel realizar a compra',error);
+    //     }
+    // }
+
+    // const handleBuy = async (qtd) => {
+    //     const sumCoins = coins + qtd;
+    //     setCoins(sumCoins);
+    //     localStorage.setItem('coins', sumCoins);
+    //     await saveCoins(sumCoins);
+    // };
+    // return(
+    //     <div>
+    //         <p>{coins}</p>
+    //         <button onClick={()=>handleBuy(100)}>100</button>
+    //     </div>
+    // )
+
+    const userLocalEmail =localStorage.getItem('email');
+    const [coins, setCoins] = useState(0);
+
+    useEffect(() => {
+        const userLocalCoins = localStorage.getItem('coins');
+        setCoins(userLocalCoins ? parseFloat(userLocalCoins, 10) : 0) 
+    }, []);
+
+    const saveCoins = async (coins) => {
         try {
-            console.log(coins)
-          const response = await api.put('/user', {'email': userLocalEmail, coins});
-          if(response.status == 200) {
-            if(coins !== undefined){
-                coins = convert + coins;
-                localStorage.setItem('coins', coins);
-                window.location.reload();
-            }
-          }
-        }catch(err) {
-          console.log('credenciais inválidas', err);
+            await api.put('/user', {'email': userLocalEmail, coins});
+        }catch(error){
+            console.log('Não foi possivel realizar a compra',error);
         }
     }
+
+    const handleBuy = async (qtd) => {
+        const sumCoins = coins + qtd;
+        setCoins(sumCoins);
+        localStorage.setItem('coins', sumCoins);
+        await saveCoins(sumCoins);
+    };
     
     return(
         <section className="bg-loja-moeda">
@@ -49,13 +76,9 @@ function LojaMoeda() {
                         <div className="item-qtde-loja-moeda moedas-loja-moeda">
                             <div className="icon-loja-moeda icon-moeda-loja-moeda"></div>
                             <div className="info-esmeralda-loja-moeda">
-                                    {userLocalCoins === undefined | userLocalCoins === null ? (
-                                        <p className="info-p-loja-moeda">0</p>
-                                    ):
-                                    <p className="info-p-loja-moeda">
-                                        {userLocalCoins}
-                                    </p>
-                                    }
+                                <p className="info-p-loja-moeda">
+                                    {coins}
+                                </p>
                             </div>
                         </div>
                         <div className="loja-title">Loja</div>
@@ -68,7 +91,7 @@ function LojaMoeda() {
                                 <div className="nome-item-loja-moeda">
                                     <h1>100 MOEDAS</h1>
                                 </div>
-                                <button className="valor-loja-moeda" value={100} onClick={handleBuy}>R$5,00</button>
+                                <button className="valor-loja-moeda" onClick={()=>handleBuy(100)}>R$5,00</button>
                             </div>
                             <div className="loja-moeda-item-loja-moeda">
                                 <div className="foto-item-loja-moeda moeda-m-loja-moeda">
@@ -76,7 +99,7 @@ function LojaMoeda() {
                                 <div className="nome-item-loja-moeda">
                                     <h1>500 MOEDAS</h1>
                                 </div>
-                                <button className="valor-loja-moeda" value={500} onClick={handleBuy}>R$20,00</button>
+                                <button className="valor-loja-moeda" onClick={()=>handleBuy(500)}>R$20,00</button>
                             </div>
                             <div className="loja-moeda-item-loja-moeda">
                                 <div className="foto-item-loja-moeda moeda-g-loja-moeda">
@@ -84,7 +107,7 @@ function LojaMoeda() {
                                 <div className="nome-item-loja-moeda">
                                     <h1>1.000 MOEDAS</h1>
                                 </div>
-                                <button className="valor-loja-moeda" value={1000} onClick={handleBuy}>R$50,00</button>
+                                <button className="valor-loja-moeda" onClick={()=>handleBuy(1000)}>R$50,00</button>
                             </div>
                         </div>
                     </div>

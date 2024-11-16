@@ -12,7 +12,7 @@ function Home() {
   const { toggleMusica, musicaStatus } = useSomAmbiente();
 
   const handleNavigate = () => {
-    navigate('https://renatoccz.itch.io/jogo-da-onca')
+    window.location.href = "https://renatoccz.itch.io/jogo-da-onca";
   }
 
   return (
@@ -35,7 +35,7 @@ function Home() {
       <div className="Formhome">
         <div className="logo-homeLog">
           <div className="buton-jogar">
-            <button type="submit" onClick={() => {handleNavigate}}>JOGAR</button>
+            <button type="submit" onClick={handleNavigate}>JOGAR</button>
           </div>
         </div>
       </div>

@@ -28,14 +28,16 @@ const Header = () => {
 
   //recuperando LocalStorage
   const userLocal = localStorage.getItem('username');
-  var cont = 1
-  if(user !== null & cont === 1) {
-    console.log(userLocal);
-    cont = 2;
-  }
+  // var cont = 1
+  // if(user !== null & cont === 1) {
+  //   console.log(userLocal);
+  //   cont = 2;
+  // }
 
   return (
     <header className="menu-cadastro">
+      
+
         {/* Exibindo o nome do usuário no canto direito */}
         {userLocal ? (
           <nav className="menu-options-cadastro">
@@ -56,7 +58,6 @@ const Header = () => {
         </nav>
         ): (
           <nav className="menu-options-cadastro">
-        <a onClick={() => {localStorage.clear()}}>limpa</a>
         <a onClick={() => { navigate("/menu"); }}>
           <img src={gameIcon} alt="Jogo da Onça" className="game-logo-cadastro" />
         </a>

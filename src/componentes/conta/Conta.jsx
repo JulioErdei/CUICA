@@ -118,7 +118,7 @@ function Conta() {
                         <form className="infos-user-conta" onSubmit={handleChange}>
                             <div className="info-conta info-nome-conta">
                                 <label htmlFor="userName">Nome: </label>
-                                <input type="text" id="userName" name="userName" defaultValue={userLocalName} onChange={(e)=> setUserName(e.target.value)} />
+                                <input type="text" id="userName" name="userName" minLength={3} defaultValue={userLocalName} onChange={(e)=> setUserName(e.target.value)} />
                             </div>
                             <div className="info-conta info-nome-conta">
                                 <label htmlFor="passwordHash">Senha: </label>

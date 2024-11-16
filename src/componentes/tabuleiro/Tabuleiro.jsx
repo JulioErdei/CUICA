@@ -5,7 +5,7 @@ function Tabuleiro() {
     return (
         <div className="container">
             <iframe frameBorder="0"
-            src="https://itch.io/embed-upload/11908745?color=333333" 
+            src="https://renatoccz.itch.io/jogo-da-onca" 
             allowFullScreen="" width="100%" height="100%">
                 <a href="https://renatoccz.itch.io/jogo-da-onca">
                     Play Jogo da Onça on itch.io
