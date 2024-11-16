@@ -17,59 +17,6 @@
   flex-direction: column;
   overflow: hidden;
 }
-
-/*PADRÃO Menu superior*/
-header {
-  position: sticky;
-  background-color: #19421c;
-  padding: 10px 20px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  height: auto;
-}
-
-.menu-cadastro {
-  width: 100%;
-  display: flex;
-  align-items: center;
-  background-color: #19421c;
-  text-shadow: 5px 5px 2px #000;
-  padding: 10px 20px;
-  justify-content: center;
-}
-
-.game-logo-cadastro {
-  height: 50px;
-  padding: 0px 40px;
-  width: auto;
-}
-
-.menu-options-cadastro {
-  display: flex;
-  gap: 60px;
-  align-items: center;
-}
-
-.menu-options-cadastro a {
-  color: #f7d287;
-  padding: 4px;
-  text-decoration: none;
-  font-size: 24px;
-  font-weight: bold;
-  text-shadow: 3px 3px 3px #000;
-}
-
-.menu-options-cadastro a:hover {
-  color: #ffcc33;
-  cursor: pointer;
-}
-
-.sound-icon-cadastro {
-  height: 40px;
-  width: auto;
-  cursor: pointer;
-}
   
   /*Estilizando o formulário de cadastro*/
   .q {
@@ -96,7 +43,7 @@ header {
   }
   
   .ti {
-    font-size: 8vh;
+    font-size: 5vh;
     color: #57330e;
     font-weight: bold;
     text-shadow: 5px 5px 2px #000;
@@ -107,10 +54,12 @@ header {
   
   .tex {
     width: 100%;
+    color: #221303;
   }
   
   .texto {
     font-size: 2vh;
+    color: #221303;
   }
   
   .b {

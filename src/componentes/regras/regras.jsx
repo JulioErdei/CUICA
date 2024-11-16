@@ -50,7 +50,7 @@ function Regras() {
               <div className="ti">Regras</div>
               <div className='tex'>
                 <p className="texto">
-                      Tabuleiro: O tabuleiro é composto por um conjunto de linhas cruzadas 
+                      <br></br>Tabuleiro: O tabuleiro é composto por um conjunto de linhas cruzadas 
                       formando ma espécie de estrela ou teia, com 24 interseções ao todo. A 
                       "onça" começa posicionada no ponto central do tabuleiro.
                   </p>

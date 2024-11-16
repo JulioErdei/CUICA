@@ -22,59 +22,6 @@
   z-index: -1; /* Coloca o pseudo-elemento atrás do conteúdo */
 }
 
-/* Estilizando o menu */
-/*header{
-  position: sticky;
-  top: 0;  
-}
-
-.menu {
-  width: 100%;
-  display: flex;  
-  align-items: center;
-  background-color: #19421c;
-  font-family: 'Chromium One Std Regular', sans-serif;
-  text-shadow: 5px 5px 2px #000;
-  padding: 10px 20px;
-  justify-content: center;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
-}
-
-.menu-icon {
-  display: flex;
-  align-items: center;
-}
-
-.game-logo {
-  height: 50px;
-  padding: 0px 40px;
-  width: auto;
-}
-
-.menu-options {
-  display: flex;
-  gap: 60px;
-  align-items: center;
-}
-
-.menu-options a {
-  color: #f7d287;
-  text-decoration: none;
-  font-size: 24px;
-  font-weight: bold;
-  text-shadow: 2px 2px 2px #000;
-}
-
-.menu-options a:hover {
-  color: #ffcc33;
-}
-
-.sound-icon {
-  height: 40px;
-  width: auto;
-  cursor: pointer;
-} */
-
 /* Estilizando o formulário de cadastro */
 .form-background {
   background-image: url('./img/fundo-forms8_rectangular.png');
@@ -136,8 +83,8 @@ button {
   border: none;
   border-radius: 10px;
   cursor: pointer;
-  height: 25%;
-  width: 55%;
+  height: auto;
+  width: 50%;
   margin-top: 4%;
   font-size: 24px;
   color: #f0d8a6;

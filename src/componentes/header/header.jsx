@@ -1,79 +1,80 @@
-import React, {useState, useRef, useEffect} from 'react';
-import './header.css'
-import { useNavigate } from 'react-router-dom';
+import React, { useState, useRef, useEffect } from 'react';
+import { Link, useNavigate } from 'react-router-dom';
 import { useUser } from '../../axios/userContext'; // Importa o hook do contexto
-import gameIcon from './images/icon2.png'; // Importe seu ícone de jogo (ajuste o caminho conforme necessário)
-import soundIcon from './images/soundicon.png'; // Importe o ícone de som (ajuste o caminho conforme necessário)
-import soundOffIcon from './images/icon-sound-off.png'
+import './header.css';
+import gameIcon from './images/icon2.png';
+import soundIcon from './images/soundicon.png';
+import soundOffIcon from './images/icon-sound-off2.png';
 import backgroundMusic from './sons/ambiente2.wav';
 
 const Header = () => {
-  const navigate = useNavigate(); // Função de navegação
-  const { user } = useUser(); // Acesso ao usuário do contexto
+  const navigate = useNavigate();
+  const { user } = useUser();
+  const [isSoundOn, setIsSoundOn] = useState(false);
+  const audioRef = useRef(null);
 
-  //recuperando dados da localStorage
+  // Controle de áudio
+  useEffect(() => {
+    audioRef.current = new Audio(backgroundMusic);
+    if (isSoundOn) {
+      audioRef.current.play().catch(err => console.error("Erro ao reproduzir áudio:", err));
+    }
+    return () => {
+      if (audioRef.current) {
+        audioRef.current.pause();
+        audioRef.current.currentTime = 0;
+      }
+    };
+  }, [isSoundOn]);
 
-  const [isSoundOn, setIsSoundOn] = useState(true);
-  const audioRef = useRef(new Audio(backgroundMusic)); // Refs para controlar o áudio
-
-  // Função para alternar o som (exemplo)
   const toggleSound = () => {
     if (isSoundOn) {
-      audioRef.current.pause(); // Pausa a música
+      audioRef.current.pause();
     } else {
-      audioRef.current.play(); // Começa a música
+      audioRef.current.play().catch(err => console.error("Erro ao reproduzir áudio:", err));
     }
     setIsSoundOn(!isSoundOn);
   };
 
-  //recuperando LocalStorage
   const userLocal = localStorage.getItem('username');
-  var cont = 1
-  if(user !== null & cont === 1) {
-    console.log(userLocal);
-    cont = 2;
-  }
 
   return (
     <header className="menu-cadastro">
-        {/* Exibindo o nome do usuário no canto direito */}
+      <nav className="menu-options-cadastro">
         {userLocal ? (
-          <nav className="menu-options-cadastro">
-          <a onClick={() => { navigate("/menuLogado"); }}>
-            <img src={gameIcon} alt="Jogo da Onça" className="game-logo-cadastro" />
-          </a>
-          <a onClick={() => { navigate("/tutorial"); }}>Regras</a>
-          <a onClick={() => { navigate("/credito"); }}>Créditos</a>
-          <a onClick={() => { navigate("/loja/moedas"); }}>Loja</a>
-          <div className="user-info-cadastro" onClick={() => navigate("/conta")}>
-              {/* <p>{user.username}</p> Nome do usuário, clicável */}
+          <>
+            <Link to="/menuLogado">
+              <img src={gameIcon} alt="Jogo da Onça" className="game-logo-cadastro" />
+            </Link>
+            <Link to="/tutorial">Regras</Link>
+            <Link to="/credito">Créditos</Link>
+            <Link to="/loja/moedas">Loja</Link>
+            <div className="user-info-cadastro" onClick={() => navigate("/conta")}>
               <p>{userLocal}</p>
             </div>
-            <a onClick={() => {navigate("/Logout")}}>Logout</a>
-          <a onClick={toggleSound}>
-            <img src={isSoundOn ? soundIcon : soundOffIcon} alt="Som do Jogo" className="sound-icon-cadastro" />
-          </a>
-        </nav>
-        ): (
-          <nav className="menu-options-cadastro">
-        <a onClick={() => {localStorage.clear()}}>limpa</a>
-        <a onClick={() => { navigate("/menu"); }}>
-          <img src={gameIcon} alt="Jogo da Onça" className="game-logo-cadastro" />
-        </a>
-        <a onClick={() => { navigate("/cadastro"); }}>Cadastro</a>
-        <a onClick={() => { navigate("/login"); }}>Login</a>
-        <a onClick={() => { navigate("/tutorial"); }}>Regras</a>
-        <a onClick={() => { navigate("/credito"); }}>Créditos</a>
-        <a onClick={toggleSound}>
-          <img src={isSoundOn ? soundIcon : soundOffIcon} alt="Som do Jogo" className="sound-icon-cadastro" />
+            <Link to="/logout">Logout</Link>
+          </>
+        ) : (
+          <>
+            <Link to="/menu">
+              <img src={gameIcon} alt="Jogo da Onça" className="game-logo-cadastro" />
+            </Link>
+            <Link to="/cadastro">Cadastro</Link>
+            <Link to="/login">Login</Link>
+            <Link to="/tutorial">Regras</Link>
+            <Link to="/credito">Créditos</Link>
+          </>
+        )}
+        <a onClick={toggleSound} >
+          <img src={isSoundOn ? soundIcon : soundOffIcon} alt="Som do Jogo" className="sound-icon-cadastro"/>
         </a>
       </nav>
-        )}
     </header>
   );
 };
 
 export default Header;
+
 
 
 

@@ -30,7 +30,6 @@ import { UserProvider } from './axios/userContext.jsx';
 import { AuthProvider } from './contexts/AuthContext.jsx';
 import Profile from './componentes/profile/profile.jsx';
 
-
 const App = () => {
   const { signed } = useAuthConta();
   return (

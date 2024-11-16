@@ -48,7 +48,7 @@ function Credito() {
             <div className='quadro-container'>
               <div className="title">Créditos</div>
                 <div className='subtitle'>
-                  <p>Este jogo foi realizado como parte do curso de Análise e
+                  <br></br><p>Este jogo foi realizado como parte do curso de Análise e
                   Desenvolvimento de Tecnologia na FATEC São Paulo.</p>
                 </div>
                 <div className='texto'>

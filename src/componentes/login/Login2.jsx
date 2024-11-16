@@ -89,7 +89,7 @@ function Login() {
           onChange={(e) => setPasswordHash(e.target.value)}
         />
         {error&&<p>{error}</p>}
-        <label><a href="#">Esqueceu a senha?</a></label> 
+        <label><a href="novasenha">Esqueceu a senha?</a></label> 
          
         <button type="submit">Jogar</button>
       </form>
