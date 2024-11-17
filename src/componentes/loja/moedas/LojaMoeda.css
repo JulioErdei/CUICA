@@ -19,14 +19,6 @@
     background-color: rgba(0, 0, 0, 0.6);
 }
 
-/*.bg-loja-moeda {
-    width: 100vw;
-    height: 100vh;
-    background-image: url('/public/assets/imagens/backgrounds/cenario_loja.png');
-    background-repeat: no-repeat;
-    background-size: cover;
-}*/
-
 .bg-loja-moeda-container {
     background: url('img/fundo.png') no-repeat center center;
     background-size: cover;
@@ -165,18 +157,6 @@ h1{
     justify-content: center;
 }
 
-.item-qtde-loja-moeda {
-    width: 10%;
-    height: 70%;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-    background-image: url('/public/assets/imagens/placas/placa_subtitulo.png');
-    background-size: contain;
-    background-repeat: no-repeat;
-}
-
 .loja-title {
     font-size: 52px;
     color: #57330e;
@@ -184,25 +164,6 @@ h1{
     font-weight: bold;
     text-shadow: 5px 5px 2px #000;
   }
-
-.icon-loja-moeda {
-    /* margin-left: 3%; */
-    /* margin-right: 5px; */
-    background-size: contain;
-    background-repeat: no-repeat;
-    display: inline;
-}
-
-.icon-moeda-loja-moeda {
-    width: 50%;
-    height: 60%;
-    background-image: url('/public/assets/imagens/vetores/moedas.png');
-}
-
-
-
-
-
 
 .exibe-container{
     width: 10%;

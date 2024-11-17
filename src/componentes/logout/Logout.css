@@ -59,12 +59,12 @@ h1 {
 }
 
 .button-container {
-  display: flex; /* Garante que os botões fiquem lado a lado */
-  justify-content: space-between; /* Espaço entre os botões */
+  display: flex; 
+  justify-content: space-between; 
   align-items: center;
-  width: 85%; /* Faz o container de botões ocupar toda a largura */
+  width: 85%; 
   height: 50%;
-  gap: 10px; /* Adiciona espaçamento entre os botões */
+  gap: 10px; 
 }
 
 .button1 {
