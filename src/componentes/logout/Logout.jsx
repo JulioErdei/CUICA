@@ -24,7 +24,7 @@ function Logout() {
             </div>
             {userLocal && (
               <div className="button-container">
-                <button className="button1" onClick={() => navigate('/menu')}>Sim</button>
+                <button className="button1" onClick={handleSubmit}>Sim</button>
                 <button className="button2" onClick={() => navigate('/menuLogado')}>Não</button>
               </div>
             )}

@@ -12,7 +12,8 @@ function Home() {
   const { toggleMusica, musicaStatus } = useSomAmbiente();
 
   const handleNavigate = () => {
-    window.location.href = "https://renatoccz.itch.io/jogo-da-onca";
+    // window.location.href = "https://renatoccz.itch.io/jogo-da-onca";
+    navigate('/tabuleiro')
   }
 
   return (
