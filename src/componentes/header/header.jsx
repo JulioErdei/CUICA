@@ -10,35 +10,39 @@ import backgroundMusic from './sons/ambiente2.wav';
 const Header = () => {
   const navigate = useNavigate();
   const { user } = useUser();
-  const [isSoundOn, setIsSoundOn] = useState(true);
-  const audioRef = useRef(null);
+  const [isSoundOn, setIsSoundOn] = useState(() => {
+    // Recupera o estado do som do localStorage ao carregar
+    const savedState = localStorage.getItem('isSoundOn');
+    return savedState ? JSON.parse(savedState) : true; // Padrão: som ligado
+  });
 
-  // Controle de áudio
+  const audioRef = useRef(new Audio(backgroundMusic));
+
   useEffect(() => {
-    audioRef.current = new Audio(backgroundMusic);
+    const audio = audioRef.current;
+    audio.loop = true; // Configura loop
+
+    // Reproduz ou pausa com base no estado
     if (isSoundOn) {
-      audioRef.current.play().catch(err => console.error("Erro ao reproduzir áudio:", err));
+      audio.play().catch((err) => console.error("Erro ao reproduzir áudio:", err));
+    } else {
+      audio.pause();
     }
+
     return () => {
-      if (audioRef.current) {
-        audioRef.current.pause();
-        audioRef.current.currentTime = 0;
-      }
+      audio.pause();
     };
   }, [isSoundOn]);
 
   const toggleSound = () => {
-    if (isSoundOn) {
-      audioRef.current.pause();
-    } else {
-      audioRef.current.play().catch(err => console.error("Erro ao reproduzir áudio:", err));
-    }
-    setIsSoundOn(!isSoundOn);
+    const newSoundState = !isSoundOn;
+    setIsSoundOn(newSoundState);
+    localStorage.setItem('isSoundOn', JSON.stringify(newSoundState)); // Salva o estado no localStorage
   };
 
   const userLocal = localStorage.getItem('username');
-  var cont = 1
-  if(user !== null & cont === 1) {
+  let cont = 1;
+  if (user !== null && cont === 1) {
     console.log(userLocal);
     cont = 2;
   }
@@ -70,8 +74,8 @@ const Header = () => {
             <Link to="/credito">Créditos</Link>
           </>
         )}
-        <a onClick={toggleSound} >
-          <img src={isSoundOn ? soundIcon : soundOffIcon} alt="Som do Jogo" className="sound-icon-cadastro"/>
+        <a onClick={toggleSound}>
+          <img src={isSoundOn ? soundIcon : soundOffIcon} alt="Som do Jogo" className="sound-icon-cadastro" />
         </a>
       </nav>
     </header>
