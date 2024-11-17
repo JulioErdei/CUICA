@@ -1,12 +1,11 @@
 import React, { useEffect, useState } from 'react';
 import { BrowserRouter, Navigate, Route, Routes } from 'react-router-dom';
 import './App.css';
-import Colecao from './componentes/colecao/Colecao.jsx';
 import Conta from './componentes/conta/Conta.jsx';
 import Home from './componentes/home/Home.jsx';
 import HomeLog from './componentes/homeLog/HomeLog.jsx';
 import Login from './componentes/login/Login2.jsx';
-import EsqueciSenha from './componentes/login/esqueciSenha/EsqueciSenha.jsx';
+import Novasenha from './componentes/Novasenha/novasenha.jsx';
 import LojaMoeda from './componentes/loja/moedas/LojaMoeda.jsx';
 import LojaSkin from './componentes/loja/skins/LojaSkin.jsx';
 import CompraMoedas from './componentes/modals/compras/moedas/compraMoedas.jsx';
@@ -45,10 +44,9 @@ const App = () => {
               <Route path='/menuLogado' element={<HomeLog />} />
               <Route path='/login' element={<Login />} />
               <Route path='/cadastro' element={<Cadastro />} />
-              <Route path='/login/esqueci-senha' element={<EsqueciSenha/>} />
+              <Route path='/novasenha' element={<Novasenha/>} />
               <Route path='/loja/skins' element={<LojaSkin />} />
               <Route path='/loja/moedas' element={<LojaMoeda />} />
-              <Route path='/colecao' element={<Colecao />} />
               <Route path='/conta' element={<Conta />} />
               <Route path='/tabuleiro' element={<Tabuleiro />} />
               <Route path='/fila' element={<Fila />} />

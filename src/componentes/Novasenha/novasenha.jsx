@@ -1,7 +1,6 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import "./novasenha.css";
-import gameIcon from './img/icon2.png';
-import soundIcon from './img/soundicon.png';
 
 function Novasenha() {
   const [formData, setFormData] = useState({
@@ -9,43 +8,75 @@ function Novasenha() {
     confirmenovasenha: "",
   });
 
+  const [error, setError] = useState("");
+  const navigate = useNavigate();
+
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // chamada para o backend
-    console.log(formData);
+
+    // Validação: Senha deve ter 6 caracteres ou mais
+    if (formData.novasenha.length < 6) {
+      setError("A senha deve ter pelo menos 6 caracteres.");
+      return;
+    }
+
+    // Validação: Senhas devem coincidir
+    if (formData.novasenha !== formData.confirmenovasenha) {
+      setError("As senhas não coincidem.");
+      return;
+    }
+
+    setError("");
+
+    // Simular envio ao backend
+    console.log("Senha alterada com sucesso:", formData);
+
+    // Redirecionar para a página de login
+    navigate("/login");
   };
 
   return (
+    <div className="Novasenha-container">
+      <div className="form-background">
+        <form onSubmit={handleSubmit}>
+          <h2 className="Novasenha-title">Alterar Senha</h2>
 
-        <div class="Novasenha-container">
-        <div className="form-background">
-            <form onSubmit={handleSubmit}>
-              <div className="Novasenha-title">Nova Senha</div>
-        <label>Nova Senha</label>
-        <input
-          type="password"
-          name="novasenha"
-          value={formData.novasenha}
-          onChange={handleChange}
-        />
+          <label htmlFor="novasenha">Nova Senha</label>
+          <input
+            type="password"
+            id="novasenha"
+            name="novasenha"
+            value={formData.novasenha}
+            onChange={handleChange}
+            required
+            aria-label="Digite sua nova senha"
+          />
 
-        <label>Confirme a nova senha</label>
-        <input
-          type="confirmenovasenha"
-          name="confirmenovasenha"
-          value={formData.confirmenovasenha}
-          onChange={handleChange}
-        />       
-        <button type="submit">Alterar</button>
-      </form>
-    </div>
+          <label htmlFor="confirmenovasenha">Confirme a Nova Senha</label>
+          <input
+            type="password"
+            id="confirmenovasenha"
+            name="confirmenovasenha"
+            value={formData.confirmenovasenha}
+            onChange={handleChange}
+            required
+            aria-label="Confirme sua nova senha"
+          />
+          
+          {error && <p className="error-message">{error}</p>}
+
+          <button type="submit" className="submit-button">
+            Alterar
+          </button>
+        </form>
+      </div>
     </div>
   );
-
 }
 
 export default Novasenha;
+

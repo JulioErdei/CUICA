@@ -21,9 +21,10 @@
 }
 
 /*Estilizando o formulário de cadastro*/
+
 .form-background-cadastro {
   height: 95%;
-  width: 40%;
+  width: 50%;
   background-image: url('./images/fundo-forms8.png');
   background-size: contain;
   background-position: center;
@@ -38,7 +39,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 90%;
+  width: 70%;
 }
 
 .cadastro-title {
@@ -55,9 +56,11 @@ label {
   font-weight: bold;
   color: #f7d287;
   text-shadow: 3px 3px 3px #000;
+  margin-bottom: 1px;
 }
 
 input {
+  margin-bottom: 4px;
   width: 75%;
   height: 40px;
   background-color: #f0d8a6;
@@ -89,76 +92,57 @@ button:active {
   transform: scale(0.95);
 }
 
-/* Responsividade */
+/* Responsividade*/
 
 /* Para telas menores que 1024px (tablets e menores) */
 @media (max-width: 1024px) {
   .form-background-cadastro {
-    width: 60%; /* Aumenta a largura do formulário para telas maiores */
-  }
-
-  .menu-options-cadastro {
-    gap: 40px; /* Diminui o espaço entre os itens do menu */
+    width: 70%; /* Ajuste a largura para melhor adaptação */
+    height: auto; /* Certifique-se de que o tamanho do formulário seja fluido */
   }
 
   .cadastro-title {
-    font-size: 42px; /* Diminui o título para se ajustar em telas menores */
+    font-size: 40px; /* Ajuste o título para melhorar a legibilidade */
   }
 
-  button {
-    width: 50%; /* Botão mais largo para preencher mais espaço */
+  input, button {
+    width: 80%; /* Inputs e botões mais largos para facilidade de uso */
   }
 }
 
 /* Para telas menores que 768px (smartphones) */
 @media (max-width: 768px) {
   .form-background-cadastro {
-    width: 80%; /* Expande o formulário para preencher mais a tela */
-  }
-
-  .menu-options-cadastro {
-    flex-direction: column;
-    gap: 20px; /* Menu em coluna para facilitar o toque em telas menores */
-  }
-
-  .menu-options-cadastro a {
-    font-size: 20px; /* Texto menor no menu */
+    width: 85%; /* Leve aumento da largura para telas menores */
   }
 
   .cadastro-title {
-    font-size: 36px; /* Reduz o tamanho do título */
+    font-size: 34px; /* Título um pouco menor */
   }
 
   input {
-    width: 90%; /* Inputs mais largos para maior conforto de uso */
+    width: 100%; /* Para garantir que os inputs ocupem toda a largura */
+    height: 40px; /* Ajuste de altura */
   }
 
   button {
-    width: 60%; /* Botões mais largos */
+    width: 70%; /* Botões mais largos em telas pequenas */
+    font-size: 18px; /* Ajuste o tamanho da fonte para os botões */
   }
 }
 
 /* Para telas menores que 480px (celulares pequenos) */
 @media (max-width: 480px) {
-  .form-background-cadastro {
-    width: 90%; /* Quase 100% da tela para otimizar espaço */
-  }
-
   .cadastro-title {
-    font-size: 28px; /* Título bem menor para caber bem */
-  }
-
-  label {
-    font-size: 16px; /* Labels menores para melhor ajuste */
+    font-size: 24px; /* Título reduzido para telas menores */
   }
 
   input {
-    width: 100%; /* Inputs ocupando toda a largura */
-    height: 35px; /* Altura um pouco menor para telas pequenas */
+    height: 30px; /* Ajuste a altura dos inputs para telas muito pequenas */
   }
 
   button {
-    width: 80%; /* Botões largos em telas pequenas */
-    font-size: 20px;
+    width: 80%; /* Botões largos para facilidade de clique */
+    font-size: 18px; /* Ajuste o tamanho da fonte dos botões */
   }
 }

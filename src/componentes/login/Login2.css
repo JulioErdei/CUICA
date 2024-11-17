@@ -6,6 +6,11 @@
   overflow: hidden;
   scroll-behavior: smooth;
 }
+.error-message {
+  color: rgb(143, 8, 8);
+  font-size: 0.9rem;
+  margin-top: 5px;
+}
 
 .Login-container {
   background: url('./img/fundo.png') no-repeat center center;
@@ -51,7 +56,6 @@ form {
   font-weight: bold;
   text-shadow: 5px 5px 2px #000;
   margin-bottom: 20px;
-  margin-top: 80px;
 }
 
 label {

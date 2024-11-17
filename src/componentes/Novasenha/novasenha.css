@@ -32,8 +32,8 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  min-height: 100vh;
-  width: 48%;
+  min-height: 90vh;
+  width: 40%;
   border-radius: 0 0 30px 30px;
 
 }
@@ -44,6 +44,7 @@ form {
   align-items: center;
   width: 65%;
   gap: 1px;
+  padding-top: 70px;
   font-family: 'Chromium One Std Regular', sans-serif;
 }
 
@@ -69,12 +70,15 @@ label {
 
 input {
   margin-top: 4%;
-  padding: 10px;
+  padding: 5px; 
+  height: 30px; 
   width: 80%;
   background-color: #f0d8a6;
   border: 2px solid #57330e;
   border-radius: 5px;
+  font-size: 14px;
 }
+
 
 button {
   background-image: url('img/placa5.png');
@@ -101,6 +105,11 @@ button:hover {
 
 button:active {
   transform: scale(0.95);
+}
+.error-message {
+  color: rgb(143, 8, 8);
+  font-size: 0.9rem;
+  margin-top: 5px;
 }
 
 /* Responsividade */

@@ -1,38 +1,12 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate } from 'react-router';
-import { toast } from 'react-toastify';
-import ContaService from '../../services/ContaService';
 import './Conta.css';
-import VisibilityIcon from '/public/assets/imagens/icones/VisibilityIcon';
-import VisibilityOffIcon from '/public/assets/imagens/icones/VisibilityOffIcon';
-import useAuthConta from '/src/hooks/AuthConta';
-import { validatePassword } from '/src/utils/Regex.jsx';
-import gameIcon from '/public/assets/imagens/icones/icon2.png';
-import soundIcon from '/public/assets/imagens/icones/soundicon.png';
 import backgroundMusic from './sons/ambiente2.wav';
 import Header from "../header/header";
 import api from "../../axios/config";
 import { useUser } from "../../axios/userContext";
 
 function Conta() {
-    const [isPlaying, setIsPlaying] = useState(false);  // Estado para controlar o som
-    const [audio] = useState(new Audio(backgroundMusic));  // Instância do áudio
-  
-    const { user } = useUser();
-
-    // Efeito para controlar o início/parada da música quando o estado mudar
-    useEffect(() => {
-      if (isPlaying) {
-        audio.play();
-      } else {
-        audio.pause();
-      }
-    }, [isPlaying, audio]);
-  
-    // Alternar o estado do som (ativar/desativar)
-    const toggleSound = () => {
-      setIsPlaying(!isPlaying);
-    };
 
     const navigate = useNavigate();
 
@@ -41,49 +15,9 @@ function Conta() {
     const userLocalPassword =localStorage.getItem('passwordHash');
 
     const [username, setUserName] = useState();
-    // const [email, setEmail] = useState();
+
     const [passwordHash, setPasswordHash] = useState();
 
-
-    // const [visibilityStatus, setVisibilityStatus] = useState(false);
-    // // const { user } = useAuthConta();
-    
-    // useEffect(()=>{
-    //     setEmail(user?.email)
-    //     // setNome(user?.nome)
-    //     setUserName(user?.username)
-    // },[user])
-
-    // const [email, setEmail] = useState(user?.email);
-	// const [nome, setNome] = useState(user?.userName);
-	// const [senha, setSenha] = useState("");
-	// const [senhaErr, setSenhaErr] = useState(false);
-	// // const [userName, setUserName] = useState(user?.jogador?.username);
-
-    // const handleFieldChange = (e, setStateFunction) => {
-    //     setStateFunction(e.target.value);
-    // };
-
-    // const validaSenha = () => {
-    //     // se a senha não for válida, seta o erro como true
-	// 	validatePassword.test(senha) ? setSenhaErr(false) : setSenhaErr(true);
-	// }
-
-    // const toggleVisibility = (e) => {
-	// 	e.preventDefault();
-	// 	setVisibilityStatus(!visibilityStatus);
-	// }
-
-    // const atualizaUser = async (e) => {
-	// 	e.preventDefault();
-	// 	validaSenha();
-    //     if (!senhaErr) {
-    //         await ContaService.atualizaConta(userName, email, senha);
-    //         toast.success("Informações atualizadas com sucesso!");
-    //         return
-    //     }
-    //     toast.error("Erro ao atualizar informações!\nTente novamente!");
-    // }
 
     const handleChange = async e => {
         e.preventDefault();
@@ -93,7 +27,7 @@ function Conta() {
             console.log(passwordHash);
           const response = await api.put('/user', {'email': userLocalEmail, username, passwordHash});
           if(response.status == 200) {
-            //trim ???
+ 
             if(passwordHash !== undefined){
                 localStorage.setItem('passwordHash', passwordHash);
             }
@@ -114,6 +48,7 @@ function Conta() {
       <Header />
                 </div>
                 <div className="content-main-conta">
+                
                     <div className="content-main-superior-conta">
                         <form className="infos-user-conta" onSubmit={handleChange}>
                             <div className="info-conta info-nome-conta">
@@ -126,33 +61,6 @@ function Conta() {
                             </div>
                                 <button className="btn-atualiza" type="submit">Alterar</button>
                         </form>
-                        {/* <form className="infos-user-conta" onSubmit={atualizaUser}>
-                            <div className="info-conta info-nome-conta">
-                                <label htmlFor="">NOME:</label>
-                                <input type="text" value={nome} onChange={(e) => setNome(e.target.value)} required/>
-                            </div>
-                            <div className="info-conta info-user-conta">
-                                <label htmlFor="">USER:</label>
-                                <input type="text" value={userName} onChange={(e) => setUserName(e.target.value)} required/>
-                            </div>
-                            <div className="info-conta info-email-conta">
-                                <label htmlFor="">EMAIL:</label>
-                                <input type="email" value={email} pattern="^\w.{2,}\u0040[a-z]{2,}.[a-z]{2,}\S"
-                                title="Formato esperado: seuemail@email.com"
-                                disabled
-                                />
-                            </div>
-
-                            <div className="info-conta info-senha-conta">
-                                <label htmlFor="">SENHA:</label>
-                                <input type={visibilityStatus ? "text" : "password"} className='inp-senha' onChange={(e) => setSenha(e.target.value)} required/>
-                                <button className="btn-visibility btn-senha-conta" onClick={toggleVisibility}>{visibilityStatus ? <VisibilityIcon /> : <VisibilityOffIcon />}</button>
-                            </div>
-                            <div className="info-conta atualiza-info-conta">
-                                <label htmlFor="">&nbsp;</label>
-                                <button className="btn-atualiza">ATUALIZAR</button>
-                            </div>
-                        </form> */}
                     </div>
                     
                 </div>
