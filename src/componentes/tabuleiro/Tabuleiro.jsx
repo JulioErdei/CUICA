@@ -6,7 +6,7 @@ function Tabuleiro() {
     return (
         <div className="container">
             <Header />
-            <iframe frameborder="0" src="https://itch.io/embed-upload/12013006?color=333333" allowfullscreen="" width="1920" height="1100"><a href="https://renatoccz.itch.io/jogo-da-onca">Play Jogo da Onça on itch.io</a></iframe>
+            <iframe frameborder="0" src="https://itch.io/embed-upload/12015535?color=333333" allowfullscreen="" width="1920" height="1100"><a href="https://renatoccz.itch.io/jogo-da-onca">Play Jogo da Onça on itch.io</a></iframe>
         </div>
     );
 }
