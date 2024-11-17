@@ -186,22 +186,57 @@ h1{
   }
 
 .icon-loja-moeda {
-    margin-right: 5px;
+    /* margin-left: 3%; */
+    /* margin-right: 5px; */
+    background-size: contain;
+    background-repeat: no-repeat;
+    display: inline;
+}
+
+.icon-moeda-loja-moeda {
+    width: 50%;
+    height: 60%;
+    background-image: url('/public/assets/imagens/vetores/moedas.png');
+}
+
+
+
+
+
+
+.exibe-container{
+    width: 10%;
+    height: 70%;
+    display: flex;
+    /* flex-direction: row; */
+    align-items: center;
+    justify-content: left;
+    background-image: url('/public/assets/imagens/placas/placa_subtitulo.png');
     background-size: contain;
     background-repeat: no-repeat;
 }
 
-.icon-moeda-loja-moeda {
+.icon-moeda{
+    margin-left: 2%;
+    background-size: contain;
+    background-repeat: no-repeat;
+    display: inline;
     width: 25%;
     height: 60%;
     background-image: url('/public/assets/imagens/vetores/moedas.png');
 }
 
-.icon-esmeralda-loja-moeda {
+.moeda{
+    font-family: 'Londrina Solid', cursive;
+    font-size: 2em;
+    color: #5E2C12;
+}
+
+/* .icon-esmeralda-loja-moeda {
     width: 20%;
     height: 50%;
     background-image: url('/public/assets/imagens/vetores/esmeraldas.png');
-}
+} */
 
 .info-p-loja-moeda{
     font-family: 'Londrina Solid', cursive;
@@ -216,7 +251,7 @@ h1{
 }
 
 .loja-esmeralda-loja-moeda{
-    width: 100%;
+    width: 50%;
     height: 45%;
     display: flex;
     margin: 0 auto;

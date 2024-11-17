@@ -17,19 +17,15 @@ function Logout() {
   return (
     <div className="Logout-container">
       <div className="form-background">
-        <div>
           <form onSubmit={(e) => e.preventDefault()}>
             <div className="Logout-title">
               <h1>Deseja mesmo encerrar sessão?</h1>
             </div>
-            {userLocal && (
               <div className="button-container">
                 <button className="button1" onClick={handleSubmit}>Sim</button>
                 <button className="button2" onClick={() => navigate('/menuLogado')}>Não</button>
               </div>
-            )}
           </form>
-        </div>
       </div>
     </div>
   );

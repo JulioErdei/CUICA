@@ -63,6 +63,7 @@ h1 {
   justify-content: space-between; /* Espaço entre os botões */
   align-items: center;
   width: 85%; /* Faz o container de botões ocupar toda a largura */
+  height: 50%;
   gap: 10px; /* Adiciona espaçamento entre os botões */
 }
 

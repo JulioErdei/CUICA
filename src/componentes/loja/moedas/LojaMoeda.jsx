@@ -73,15 +73,19 @@ function LojaMoeda() {
                 <Header />
                 <div className="form-background-loja">
                     <div className="moedas-atuais-loja-moeda">
-                        <div className="item-qtde-loja-moeda moedas-loja-moeda">
-                            <div className="icon-loja-moeda icon-moeda-loja-moeda"></div>
-                            <div className="info-esmeralda-loja-moeda">
-                                <p className="info-p-loja-moeda">
+                        {/* <div className="item-qtde-loja-moeda moedas-loja-moeda"> */}
+                            {/* <div className="icon-loja-moeda icon-moeda-loja-moeda"></div> */}
+                            {/* <div className="info-esmeralda-loja-moeda"> */}
+                                {/* <p className="info-p-loja-moeda">
                                     {coins}
-                                </p>
-                            </div>
+                                </p> */}
+                            {/* </div> */}
+                        {/* </div> */}
+                        <div className="exibe-container">
+                            <p className='icon-moeda' />
+                            <p className='moeda'>{coins}</p>
                         </div>
-                        <div className="loja-title">Loja</div>
+                    <div className="loja-title">Loja</div>
                     </div>
                     <div className="loja-loja-moeda">
                         <div className="loja-moeda-loja-moeda">
