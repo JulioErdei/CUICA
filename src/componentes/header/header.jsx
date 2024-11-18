@@ -51,9 +51,10 @@ const Header = () => {
             <Link to="/tutorial">Regras</Link>
             <Link to="/credito">Créditos</Link>
             <Link to="/loja/moedas">Loja</Link>
-            <div className="user-info-cadastro" onClick={() => navigate("/conta")}>
+            <Link to="/conta">Perfil</Link>
+            {/* <div className="user-info-cadastro" onClick={() => navigate("/conta")}>
               <p>{userLocal}</p>
-            </div>
+            </div> */}
             <Link to="/logout">Logout</Link>
           </>
         ) : (
