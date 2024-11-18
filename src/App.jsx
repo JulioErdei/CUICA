@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import { BrowserRouter, Navigate, Route, Routes } from 'react-router-dom';
 import './App.css';
 import Conta from './componentes/conta/Conta.jsx';
@@ -25,11 +25,23 @@ import useAuthConta from '/src/hooks/AuthConta';
 import Credito from './componentes/credito/credito.jsx';
 import Logout from './componentes/logout/Logout.jsx';
 import Loading from './componentes/Loading/Loading.jsx';
-import { UserProvider } from './axios/userContext.jsx';
+import { UserProvider, useUser } from './axios/userContext.jsx';
 import { AuthProvider } from './contexts/AuthContext.jsx';
 
 const App = () => {
-  const { signed } = useAuthConta();
+  // const { signed } = useAuthConta();
+  // const {user} = useUser(user) || {};
+  
+  const username = localStorage.getItem('username');
+  var logged = false;
+  try {
+  if(!username){
+   logged = true; 
+  }}catch{
+    logged=false;
+  }
+
+
   return (
     <>
     <AuthProvider>
@@ -37,7 +49,14 @@ const App = () => {
         <BrowserRouter>
         <GlobalProvider>
           <Routes>
-              <Route path='/' element={signed ? <Navigate to={"/menu"}/> : <Navigate to={"/menu"}/>}/>
+              {/* <Route path='/' element={signed ? <Navigate to={"/menu"}/> : <Navigate to={"/menu"}/>}/> */}
+              {/* {user ? (<Route path='/menu' element={<Home />} />):(<Route path='/menuLogado' element={<HomeLog />} />)} */}
+              {/* <Route path='/' element={user ? (<Navigate to={'/menu'} />):(<Navigate to ={'/menuLogado'} />)} /> */}
+              {/* <Route path='/' element={ Logged ? <Navigate to={'/menuLogado'} /> : <Navigate to={'/menu'} /> } /> */}
+
+              {/* {logged ? (<Route path='/menuLogado' element={<HomeLog />} />) : (<Route path='/menu' element={<Home />} />)} */}
+              <Route path='/' element={ logged ? <Navigate to={'/menu'} /> : <Navigate to={'/menuLogado'} /> } />
+
               <Route path='/menu' element={<Home />} />
               <Route path='/Loading' element={<Loading />} />
               <Route path='/Logout' element={<Logout />} />
