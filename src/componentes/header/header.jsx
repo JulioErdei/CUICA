@@ -50,7 +50,7 @@ const Header = () => {
             </Link>
             <Link to="/tutorial">Regras</Link>
             <Link to="/credito">Créditos</Link>
-            <Link to="/loja/moedas" onClick={localStorage.getItem('coins', 'isSoundOn')}>Loja</Link>
+            <Link to="/loja/moedas" onClick={localStorage.getItem('coins')}>Loja</Link>
             <Link to="/conta">Perfil</Link>
             {/* <div className="user-info-cadastro" onClick={() => navigate("/conta")}>
               <p>{userLocal}</p>
