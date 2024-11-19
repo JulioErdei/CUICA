@@ -26,6 +26,8 @@ function Credito() {
     setIsPlaying(!isPlaying);
   };
 
+  const userLocal = localStorage.getItem('username');
+
   const navigate = useNavigate();
   return (
   <div className="container">
@@ -54,7 +56,11 @@ function Credito() {
                     <li className='list-text'>Isabela Ramos</li>
                   </ul>
                 </div>
-              <button type="submit" onClick={() => {navigate("/menu")}}>Fechar</button>
+                {userLocal ? (
+                  <button type="submit" onClick={() => {navigate("/menuLogado")}}>Fechar</button>
+                ):(
+                  <button type="submit" onClick={() => {navigate("/menu")}}>Fechar</button>
+                )}
             </div>
         </div>
     </div>
