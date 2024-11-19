@@ -59,7 +59,7 @@ function Credito() {
                 {userLocal ? (
                   <button type="submit" onClick={() => {navigate("/menuLogado")}}>Fechar</button>
                 ):(
-                  <button type="submit" onClick={() => {navigate("/menu")}}>Fechar</button>
+                <button type="submit" onClick={() => {navigate("/menu")}}>Fechar</button>
                 )}
             </div>
         </div>
