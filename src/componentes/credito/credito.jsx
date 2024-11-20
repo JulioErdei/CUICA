@@ -41,10 +41,11 @@ function Credito() {
                 </div>
                 <div className='texto'>
                   <ul>
+                    <li className='list-title'>Gerente de Projeto:</li>
+                    <li className='list-text'>Gabriel Senhoreli</li>
                     <li className='list-title'>Desenvolvimento Jogo e fucionalidades:</li>
                     <li className='list-text'>Renato Caetité</li>
                     <li className='list-text'>Guilherme Santos</li>
-                    <li className='list-text'>Isabela Ramos</li>
                     <li className='list-title'>Desenvolvimento site:</li>
                     <li className='list-text'>Julio Cezar Erdei</li>
                     <li className='list-text'>Sofia de Mello</li>
